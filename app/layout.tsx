@@ -20,8 +20,8 @@ const monoFont = Space_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  title: "Design Components - Webmakers UI",
+  metadataBase: new URL("https://ui.webmakers.studio/"),
   description:
     "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
+          <main className="w-full max-w-5xl mx-auto h-auto scroll-smooth">
             {children}
           </main>
           <Footer />
