@@ -9,15 +9,23 @@ import { page_routes } from "@/lib/routes-config";
 import { SheetClose } from "@/components/ui/sheet";
 
 export const NAVLINKS = [
+  // {
+  //   title: "Components",
+  //   href: `/docs${page_routes[0].href}`,
+  // },
   {
-    title: "Components",
-    href: `/docs${page_routes[0].href}`,
+    title: "Components (WIP)",
+    href: `/`,
+  },
+  {
+    title: "Webmakers Studio",
+    href: "https://webmakers.studio",
   },
 ];
 
 export function Navbar() {
   return (
-    <nav className="w-full border-b h-16 sticky top-0 z-50 bg-background">
+    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 z-50 bg-background">
       <div className="w-full max-w-5xl mx-auto h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center gap-5">
           <SheetLeftbar />
@@ -33,17 +41,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2">
-            <Search />
+            {/* <Search /> */}
             <div className="flex ml-2.5 sm:ml-0">
-              <Link
-                href="#"
-                className={buttonVariants({
-                  variant: "ghost",
-                  size: "icon",
-                })}
-              >
-                <TwitterIcon className="h-[1.1rem] w-[1.1rem]" />
-              </Link>
               <ModeToggle />
             </div>
           </div>
@@ -56,7 +55,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2.5">
-      <h2 className="text-md font-bold font-code">Webmakers UI</h2>
+      <h2 className="text-sm">Webmakers UI</h2>
     </Link>
   );
 }

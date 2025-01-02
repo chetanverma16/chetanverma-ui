@@ -1,24 +1,11 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Space_Mono, Space_Grotesk } from "next/font/google";
-import { Footer } from "@/components/footer";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
+import { Footer } from "@/components/footer";
 
-const sansFont = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-  weight: "400",
-});
-
-const monoFont = Space_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
-  weight: "400",
-});
-
+const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Design Components - Webmakers UI",
   metadataBase: new URL("https://ui.webmakers.studio/"),
@@ -34,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide`}
+        className={`${inter.className} font-regular antialiased tracking-wide`}
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -43,11 +30,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="w-full max-w-5xl mx-auto h-auto scroll-smooth">
+          <main className="w-full max-w-4xl mx-auto h-auto scroll-smooth mb-10">
+            <Navbar />
             {children}
+            <Footer />
           </main>
-          <Footer />
         </ThemeProvider>
       </body>
     </html>
