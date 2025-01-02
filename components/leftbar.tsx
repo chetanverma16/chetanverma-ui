@@ -8,7 +8,6 @@ import {
 import { Logo, NavMenu } from "./navbar";
 import { Button } from "./ui/button";
 import { AlignLeftIcon } from "lucide-react";
-import { FooterButtons } from "./footer";
 import { DialogTitle } from "./ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import DocsMenu from "./docs-menu";
