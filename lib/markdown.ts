@@ -116,14 +116,13 @@ function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
 
 export async function getAllChilds(pathString: string) {
   const items = pathString.split("/").filter((it) => it != "");
-  let page_routes_copy = ROUTES;
+  const page_routes_copy = ROUTES;
 
   let prevHref = "";
   for (const it of items) {
     const found = page_routes_copy.find((innerIt) => innerIt.href == `/${it}`);
     if (!found) break;
     prevHref += found.href;
-    page_routes_copy = found.items ?? [];
   }
   if (!prevHref) return [];
 
