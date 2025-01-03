@@ -4,6 +4,7 @@ import { Navbar } from "@/components/navbar";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Footer } from "@/components/footer";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({
           </main>
         </ThemeProvider>
       </body>
+      <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );
 }
