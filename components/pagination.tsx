@@ -16,7 +16,7 @@ export default function Pagination({ pathname }: { pathname: string }) {
               className:
                 "no-underline w-full flex flex-col pl-3 !py-8 !items-start",
             })}
-            href={`/docs${res.prev.href}`}
+            href={`/components${res.prev.href}`}
           >
             <span className="flex items-center text-muted-foreground text-xs">
               <ChevronLeftIcon className="w-[1rem] h-[1rem] mr-1" />
@@ -34,7 +34,7 @@ export default function Pagination({ pathname }: { pathname: string }) {
               className:
                 "no-underline w-full flex flex-col pr-3 !py-8 !items-end",
             })}
-            href={`/docs${res.next.href}`}
+            href={`/components${res.next.href}`}
           >
             <span className="flex items-center text-muted-foreground text-xs">
               Next
