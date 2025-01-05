@@ -2,6 +2,7 @@ import Link from "next/link";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
 import { page_routes } from "@/lib/routes-config";
+import Image from "next/image";
 
 export const NAVLINKS = [
   {
@@ -31,7 +32,8 @@ export function Navbar() {
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
+    <Link href="/" className="flex items-center gap-x-1">
+      <Image src="/logo.svg" alt="Webmakers UI" width={24} height={24} />
       <h2 className="text-sm">Webmakers UI</h2>
     </Link>
   );
