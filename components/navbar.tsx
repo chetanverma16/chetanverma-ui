@@ -17,7 +17,7 @@ export const NAVLINKS = [
 
 export function Navbar() {
   return (
-    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 z-50 bg-background">
+    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 z-50 bg-background z-[100000]">
       <div className="w-full max-w-5xl mx-auto h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center justify-between w-full gap-6">
           <Logo />

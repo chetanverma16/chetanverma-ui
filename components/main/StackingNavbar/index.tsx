@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
@@ -6,9 +8,9 @@ const StackingNavbar = () => {
   const [expanded, setExpanded] = useState(false);
 
   const items = [
-    { href: "/", label: "Projects" },
-    { href: "/components", label: "Components" },
-    { href: "/testing", label: "Information" },
+    { href: "#", label: "Projects" },
+    { href: "#", label: "Components" },
+    { href: "#", label: "Information" },
   ];
 
   return (
@@ -57,7 +59,7 @@ const StackingNavbarItem = ({
       style={{ zIndex: 100 - index }}
     >
       <Link
-        className="flex items-center text-sm px-5 py-3 rounded-3xl bg-[#b0aaaa1a] text-black backdrop-blur-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
+        className="flex items-center text-sm px-5 py-3 rounded-3xl bg-[#b0aaaa1a] no-underline text-black backdrop-blur-lg hover:bg-black hover:text-white transition-colors duration-300 ease-in-out"
         href={href}
         style={style}
       >

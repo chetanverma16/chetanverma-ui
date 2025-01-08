@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} font-regular antialiased tracking-wide`}
+        className={`${inter.className} font-regular antialiased tracking-wide p-4 lg:p-0`}
         suppressHydrationWarning
       >
         <ThemeProvider

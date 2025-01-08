@@ -6,7 +6,9 @@ export type EachRoute = {
   noLink?: true; // noLink will create a route segment (section) but cannot be navigated
 };
 
-export const ROUTES: EachRoute[] = [{ title: "Custom", href: "/custom" }];
+export const ROUTES: EachRoute[] = [
+  { title: "Stacking Navbar", href: "/stacking-navbar" },
+];
 
 type Page = { title: string; href: string };
 

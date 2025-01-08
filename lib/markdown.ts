@@ -13,6 +13,10 @@ import matter from "gray-matter";
 // custom components imports
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Outlet from "@/components/main/Markdown/Outlet";
+import Preview from "@/components/main/Preview";
+import Pre from "@/components/main/Markdown/Pre";
+// Stacking Navbar
+import StackingNavbar from "@/components/main/StackingNavbar";
 
 // add custom components
 const components = {
@@ -21,6 +25,10 @@ const components = {
   TabsList,
   TabsTrigger,
   Outlet,
+  Preview,
+  Pre,
+  // Custom Components
+  StackingNavbar,
 };
 
 // can be used for other pages like blogs, Guides etc
