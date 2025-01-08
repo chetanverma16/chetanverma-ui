@@ -3,6 +3,7 @@ import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
 import { page_routes } from "@/lib/routes-config";
 import Image from "next/image";
+import { Badge } from "./ui/badge";
 
 export const NAVLINKS = [
   {
@@ -34,7 +35,12 @@ export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-x-1">
       <Image src="/logo.svg" alt="Webmakers UI" width={24} height={24} />
-      <h2 className="text-sm">Webmakers UI</h2>
+      <h2 className="text-sm flex items-center gap-x-2">
+        Webmakers UI{" "}
+        <Badge className="text-xs" variant="outline">
+          Beta
+        </Badge>
+      </h2>
     </Link>
   );
 }
