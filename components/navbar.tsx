@@ -1,14 +1,13 @@
 import Link from "next/link";
 import Anchor from "./anchor";
 import { SheetClose } from "@/components/ui/sheet";
-import { page_routes } from "@/lib/routes-config";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 
 export const NAVLINKS = [
   {
     title: "Components",
-    href: `/components${page_routes[0].href}`,
+    href: `/components`,
   },
   {
     title: "Webmakers Studio",

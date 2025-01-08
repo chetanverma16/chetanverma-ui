@@ -2,7 +2,6 @@
 
 import { PricingSection } from "@/components/Pricing";
 import { Button } from "@/components/ui/button";
-import { page_routes } from "@/lib/routes-config";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 export default function Home() {
@@ -48,9 +47,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 1.2 }}
           className="flex flex-col md:flex-row items-start md:items-center gap-2 mt-5 md:mt-2 lg:mt-0"
         >
-          <Button
-            onClick={() => router.push(`/components${page_routes[0].href}`)}
-          >
+          <Button onClick={() => router.push(`/components`)}>
             Explore Components
           </Button>
           <Button

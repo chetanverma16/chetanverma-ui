@@ -1,8 +1,8 @@
 import { BaseMdxFrontmatter, getAllChilds } from "@/lib/markdown";
 import Link from "next/link";
 
-export default async function Outlet({ path }: { path: string }) {
-  if (!path) throw new Error("path not provided");
+export default async function Outlet({ path }: { path?: string }) {
+  if (!path) return null;
   const output = await getAllChilds(path);
 
   return (
