@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import Anchor from "./anchor";
-import { SheetClose } from "@/components/ui/sheet";
 import Image from "next/image";
 import { Badge } from "./ui/badge";
 import { page_routes } from "@/lib/routes-config";
+import { Menu } from "lucide-react";
+import { Button } from "./ui/button";
+import { useState } from "react";
 
 export const NAVLINKS = [
   {
@@ -17,13 +21,31 @@ export const NAVLINKS = [
 ];
 
 export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 z-50 bg-background z-[100000]">
-      <div className="w-full max-w-5xl mx-auto h-full flex items-center justify-between md:gap-2">
+    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 bg-background z-[100000]">
+      <div className="w-full mx-auto h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center justify-between w-full gap-6">
           <Logo />
-          <div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-4 text-sm font-medium text-muted-foreground">
             <NavMenu />
+          </div>
+          {/* Mobile Navigation */}
+          <div className="md:hidden z-[100000] relative">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <Menu className="h-5 w-5" />
+            </Button>
+            {isOpen && (
+              <div className="absolute right-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg">
+                <NavMenu isDropdown />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -45,7 +67,7 @@ export function Logo() {
   );
 }
 
-export function NavMenu({ isSheet = false }) {
+export function NavMenu({ isDropdown = false }) {
   return (
     <>
       {NAVLINKS.map((item) => {
@@ -60,10 +82,10 @@ export function NavMenu({ isSheet = false }) {
             {item.title}
           </Anchor>
         );
-        return isSheet ? (
-          <SheetClose key={item.title + item.href} asChild>
+        return isDropdown ? (
+          <div key={item.title + item.href} className="px-2 py-1">
             {Comp}
-          </SheetClose>
+          </div>
         ) : (
           Comp
         );

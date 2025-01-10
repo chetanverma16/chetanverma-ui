@@ -31,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="w-full max-w-4xl mx-auto h-auto scroll-smooth mb-10">
+          <main className="w-full max-w-6xl mx-auto h-auto scroll-smooth mb-10">
             <Navbar />
             {children}
             <Footer />
