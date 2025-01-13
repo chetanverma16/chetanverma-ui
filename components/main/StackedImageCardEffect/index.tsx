@@ -1,0 +1,50 @@
+"use client";
+
+import React from "react";
+import { motion } from "framer-motion";
+
+const ScrollTextEffect = ({ src }: { src: string }) => {
+  return (
+    <motion.div
+      className="relative flex items-center w-full h-full justify-center overflow-hidde group border-none"
+      whileHover="hover"
+    >
+      <motion.img
+        className="absolute h-full w-full object-cover top-0 left-0 z-10 border-none"
+        src={src}
+        variants={{
+          hover: { scale: 1.0 },
+        }}
+        transition={{ duration: 0.2, delay: 0, ease: "easeInOut" }}
+      />
+      <motion.img
+        className="absolute h-full w-full object-cover top-0 left-0 z-20 border-none"
+        src={src}
+        variants={{
+          hover: { scale: 0.7 },
+        }}
+        transition={{ duration: 0.2, delay: 0.1, ease: "easeInOut" }}
+      />
+      <motion.img
+        className="absolute h-full w-full object-cover top-0 left-0 z-30 border-none"
+        src={src}
+        variants={{
+          hover: { scale: 0.5 },
+        }}
+        transition={{ duration: 0.2, delay: 0.2, ease: "easeInOut" }}
+      />
+    </motion.div>
+  );
+};
+
+const ScrollTextEffectGroup = () => {
+  return (
+    <div className="grid grid-cols-3 w-full h-[300px] gap-4">
+      <ScrollTextEffect src="https://images.unsplash.com/photo-1531736275454-adc48d079ce9?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      <ScrollTextEffect src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+      <ScrollTextEffect src="https://images.unsplash.com/photo-1503914068268-5413b35b45ad?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    </div>
+  );
+};
+
+export default ScrollTextEffectGroup;

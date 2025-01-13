@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "img.freepik.com/**",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com/**",
+      },
     ],
   },
   // if used turbopack

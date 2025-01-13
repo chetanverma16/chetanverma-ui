@@ -8,6 +8,7 @@ export type EachRoute = {
 
 export const ROUTES: EachRoute[] = [
   { title: "Stacking Navbar", href: "/stacking-navbar" },
+  { title: "Stacked Image Card Effect", href: "/stacked-image-card-effect" },
 ];
 
 type Page = { title: string; href: string };
