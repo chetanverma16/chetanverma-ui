@@ -10,8 +10,22 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Design Components - Webmakers UI",
   metadataBase: new URL("https://ui.webmakers.studio/"),
-  description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+  description: "A collection of design components for your next project.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    images: "/opengraph-image.png",
+    title: "Design Components - Webmakers UI",
+    description: "A collection of design components for your next project.",
+    url: "https://ui.webmakers.studio/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Design Components - Webmakers UI",
+    description: "A collection of design components for your next project.",
+    images: "/opengraph-image.png",
+  },
 };
 
 export default function RootLayout({

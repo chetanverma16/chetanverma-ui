@@ -18,6 +18,7 @@ import Pre from "@/components/main/Markdown/Pre";
 // Stacking Navbar
 import StackingNavbar from "@/components/main/StackingNavbar";
 import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
+import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
 
 // add custom components
 const components = {
@@ -31,6 +32,7 @@ const components = {
   // Custom Components
   StackingNavbar,
   StackedImageCardEffect,
+  DropdownMenuRenderer,
 };
 
 // can be used for other pages like blogs, Guides etc
