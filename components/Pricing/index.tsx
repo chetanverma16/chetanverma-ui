@@ -87,7 +87,7 @@ export function PricingSection() {
                 One time
               </Badge>
               <h3>Custom Digital Solutions.</h3>
-              <p className="text-sm">
+              <p className="text-xs md:text-sm">
                 Perfect for businesses with clear goals. We deliver tailored web
                 apps, landing pages, or custom e-commerce platforms with
                 precision and quality.
@@ -127,7 +127,7 @@ export function PricingSection() {
             <div className="flex flex-col gap-y-2">
               <Badge className="w-fit">Retainer</Badge>
               <h3>Zero to one & beyond.</h3>
-              <p className="text-sm">
+              <p className="text-xs md:text-sm">
                 Ideal for ongoing support or evolving projects. Get flexibility
                 and a dedicated team to scale from concept to execution.
               </p>
