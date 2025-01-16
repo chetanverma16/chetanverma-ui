@@ -19,6 +19,7 @@ import Pre from "@/components/main/Markdown/Pre";
 import StackingNavbar from "@/components/main/StackingNavbar";
 import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
 import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
+import InputWithTags from "@/components/main/InputWithTags";
 
 // add custom components
 const components = {
@@ -33,6 +34,7 @@ const components = {
   StackingNavbar,
   StackedImageCardEffect,
   DropdownMenuRenderer,
+  InputWithTags,
 };
 
 // can be used for other pages like blogs, Guides etc

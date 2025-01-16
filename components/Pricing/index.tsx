@@ -10,7 +10,7 @@ const childVariants = {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
-    transition: { duration: 0.5, delay: 1.8 },
+    transition: { duration: 0.5 },
   },
 };
 
@@ -55,7 +55,7 @@ export function PricingSection() {
             y: 0,
             filter: "blur(0px)",
           }}
-          transition={{ duration: 0.5, delay: 1.4 }}
+          transition={{ duration: 0.5 }}
         >
           Need a custom digital solution?
         </motion.h2>
@@ -67,7 +67,7 @@ export function PricingSection() {
             filter: "blur(10px)",
           }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.5, delay: 1.6 }}
+          transition={{ duration: 0.5 }}
           className="max-w-xl"
         >
           Custom solutions, transparent pricing. From single components to

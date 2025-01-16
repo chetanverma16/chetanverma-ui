@@ -3,13 +3,42 @@
 export type EachRoute = {
   title: string;
   href: string;
+  media?: {
+    type: "image" | "video";
+    src: string;
+  };
+  description?: string;
   noLink?: true; // noLink will create a route segment (section) but cannot be navigated
 };
 
 export const ROUTES: EachRoute[] = [
-  { title: "Stacking Navbar", href: "/stacking-navbar" },
-  { title: "Stacked Image Card Effect", href: "/stacked-image-card-effect" },
-  { title: "Dropdown Menu", href: "/dropdown-menu" },
+  {
+    title: "Stacking Navbar",
+    href: "/stacking-navbar",
+    media: { type: "video", src: "/videos/stacking-navbar.webm" },
+    description:
+      "A simple stacking navbar component made with framer motion and tailwind css.",
+  },
+  {
+    title: "Stacked Image Card Effect",
+    href: "/stacked-image-card-effect",
+    media: { type: "video", src: "/videos/stacked-image-card-effect.webm" },
+    description:
+      "A simple stacked image card effect component made with motion and tailwind css.",
+  },
+  {
+    title: "Dropdown Menu",
+    href: "/dropdown-menu",
+    media: { type: "video", src: "/videos/dropdown-menu.webm" },
+    description: "Dropdown menu component with framer motion and tailwind css.",
+  },
+  {
+    title: "Input With Tags",
+    href: "/input-with-tags",
+    media: { type: "video", src: "/videos/input-with-tags.webm" },
+    description:
+      "Input with tags component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };
