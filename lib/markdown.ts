@@ -15,11 +15,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Outlet from "@/components/main/Markdown/Outlet";
 import Preview from "@/components/main/Preview";
 import Pre from "@/components/main/Markdown/Pre";
+import PropsTable from "@/components/PropsTable";
 // Stacking Navbar
 import StackingNavbar from "@/components/main/StackingNavbar";
 import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
 import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
 import InputWithTags from "@/components/main/InputWithTags";
+import { StackedCardsInteraction } from "@/components/main/StackedCardsInteraction";
 
 // add custom components
 const components = {
@@ -35,6 +37,8 @@ const components = {
   StackedImageCardEffect,
   DropdownMenuRenderer,
   InputWithTags,
+  StackedCardsInteraction,
+  PropsTable,
 };
 
 // can be used for other pages like blogs, Guides etc

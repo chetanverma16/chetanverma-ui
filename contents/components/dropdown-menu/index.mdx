@@ -250,3 +250,27 @@ export default DropdownMenu;
   <Button>Menu</Button>
 </DropdownMenu>
 ```
+
+## Props
+
+<PropsTable
+  props={[
+    { name: "options", type: "Option[]", required: true, default: "[]" },
+    {
+      name: "children",
+      type: "React.ReactNode",
+      required: true,
+      default: "null",
+    },
+  ]}
+/>
+
+## Types
+
+```tsx
+type Option = {
+  label: string;
+  onClick: () => void;
+  Icon?: React.ReactNode;
+};
+```

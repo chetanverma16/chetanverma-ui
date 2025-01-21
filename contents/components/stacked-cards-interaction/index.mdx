@@ -1,0 +1,299 @@
+---
+title: Stacking Navbar
+description: a simple stacking navbar component made with framer motion and tailwind css.
+---
+
+## Preview
+
+<Preview>
+  <StackedCardsInteraction
+    cards={[
+      {
+        image:
+          "https://images.unsplash.com/photo-1528741254566-d718e868201f?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Card 1",
+        description: "This is the first card",
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        title: "Card 2",
+        description: "This is the second card",
+      },
+      {
+        image:
+          "https://images.unsplash.com/photo-1526827826797-7b05204a22ef?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8",
+        title: "Card 3",
+        description: "This is the third card",
+      },
+    ]}
+  />
+</Preview>
+
+## Code
+
+<Pre
+  raw={`"use client";
+
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const Card = ({
+  className,
+  image,
+  children,
+}: {
+  className?: string;
+  image?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "w-[350px] cursor-pointer h-[400px] overflow-hidden bg-white rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.02)] border border-gray-200/80",
+        className
+      )}
+    >
+      {image && (
+        <div className="relative h-72 rounded-xl shadow-lg overflow-hidden w-[calc(100%-1rem)] mx-2 mt-2">
+          <img
+            src={image}
+            alt="card"
+            className="object-cover mt-0 w-full h-full"
+          />
+        </div>
+      )}
+      {children && (
+        <div className="px-4 p-2 flex flex-col gap-y-2">{children}</div>
+      )}
+    </div>
+  );
+};
+
+interface CardData {
+  image: string;
+  title: string;
+  description: string;
+}
+
+const StackedCardsInteraction = ({
+  cards,
+  spreadDistance = 40,
+  rotationAngle = 5,
+  animationDelay = 0.1,
+}: {
+  cards: CardData[];
+  spreadDistance?: number;
+  rotationAngle?: number;
+  animationDelay?: number;
+}) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  // Limit to maximum of 3 cards
+  const limitedCards = cards.slice(0, 3);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-[350px] h-[400px]">
+        {limitedCards.map((card, index) => {
+          const isFirst = index === 0;
+
+          let xOffset = 0;
+          let rotation = 0;
+
+          if (limitedCards.length > 1) {
+            // First card stays in place
+            // Second card goes left
+            // Third card goes right
+            if (index === 1) {
+              xOffset = -spreadDistance;
+              rotation = -rotationAngle;
+            } else if (index === 2) {
+              xOffset = spreadDistance;
+              rotation = rotationAngle;
+            }
+          }
+
+          return (
+            <motion.div
+              key={index}
+              className={cn("absolute", isFirst ? "z-10" : "z-0")}
+              initial={{ x: 0, rotate: 0 }}
+              animate={{
+                x: isHovering ? xOffset : 0,
+                rotate: isHovering ? rotation : 0,
+                zIndex: isFirst ? 10 : 0,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: index * animationDelay,
+                type: "spring",
+              }}
+              {...(isFirst && {
+                onHoverStart: () => setIsHovering(true),
+                onHoverEnd: () => setIsHovering(false),
+              })}
+            >
+              <Card
+                className={isFirst ? "z-10 cursor-pointer" : "z-0"}
+                image={card.image}
+              >
+                <h2>{card.title}</h2>
+                <p>{card.description}</p>
+              </Card>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export { StackedCardsInteraction, Card };
+`}
+>
+```tsx: showLineNumbers
+"use client";
+
+import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const Card = ({
+  className,
+  image,
+  children,
+}: {
+  className?: string;
+  image?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <div
+      className={cn(
+        "w-[350px] cursor-pointer h-[400px] overflow-hidden bg-white rounded-2xl shadow-[0_0_10px_rgba(0,0,0,0.02)] border border-gray-200/80",
+        className
+      )}
+    >
+      {image && (
+        <div className="relative h-72 rounded-xl shadow-lg overflow-hidden w-[calc(100%-1rem)] mx-2 mt-2">
+          <img
+            src={image}
+            alt="card"
+            className="object-cover mt-0 w-full h-full"
+          />
+        </div>
+      )}
+      {children && (
+        <div className="px-4 p-2 flex flex-col gap-y-2">{children}</div>
+      )}
+    </div>
+  );
+};
+
+interface CardData {
+  image: string;
+  title: string;
+  description: string;
+}
+
+const StackedCardsInteraction = ({
+  cards,
+  spreadDistance = 40,
+  rotationAngle = 5,
+  animationDelay = 0.1,
+}: {
+  cards: CardData[];
+  spreadDistance?: number;
+  rotationAngle?: number;
+  animationDelay?: number;
+}) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  // Limit to maximum of 3 cards
+  const limitedCards = cards.slice(0, 3);
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-[350px] h-[400px]">
+        {limitedCards.map((card, index) => {
+          const isFirst = index === 0;
+
+          let xOffset = 0;
+          let rotation = 0;
+
+          if (limitedCards.length > 1) {
+            // First card stays in place
+            // Second card goes left
+            // Third card goes right
+            if (index === 1) {
+              xOffset = -spreadDistance;
+              rotation = -rotationAngle;
+            } else if (index === 2) {
+              xOffset = spreadDistance;
+              rotation = rotationAngle;
+            }
+          }
+
+          return (
+            <motion.div
+              key={index}
+              className={`absolute ${isFirst ? "z-10" : "z-0"}`}
+              initial={{ x: 0, rotate: 0 }}
+              animate={{
+                x: isHovering ? xOffset : 0,
+                rotate: isHovering ? rotation : 0,
+                zIndex: isFirst ? 10 : 0,
+              }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: index * animationDelay,
+                type: "spring",
+              }}
+              {...(isFirst && {
+                onHoverStart: () => setIsHovering(true),
+                onHoverEnd: () => setIsHovering(false),
+              })}
+            >
+              <Card
+                className={isFirst ? "z-10 cursor-pointer" : "z-0"}
+                image={card.image}
+              >
+                <h2>{card.title}</h2>
+                <p>{card.description}</p>
+              </Card>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export { StackedCardsInteraction, Card };
+```
+</Pre>
+
+## Props
+
+<PropsTable
+  props={[
+    { name: "cards", type: "CardData[]", required: true, default: "[]" },
+    { name: "spreadDistance", type: "number", required: false, default: "40" },
+    { name: "rotationAngle", type: "number", required: false, default: "5" },
+    { name: "animationDelay", type: "number", required: false, default: "0.1" },
+  ]}
+/>
+
+## Types
+
+```tsx
+type CardData = {
+  image: string;
+  title: string;
+  description: string;
+};
+```

@@ -160,3 +160,18 @@ const StackingNavbarItem = ({
 export default StackingNavbar;
 ```
 </Pre>
+
+## Props
+
+<PropsTable
+  props={[{ name: "items", type: "Item[]", required: true, default: "[]" }]}
+/>
+
+## Types
+
+```tsx
+type Item = {
+  href: string;
+  label: string;
+};
+```

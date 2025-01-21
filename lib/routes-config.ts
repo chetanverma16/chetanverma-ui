@@ -39,6 +39,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "Input with tags component made with framer motion and tailwind css.",
   },
+  {
+    title: "Stacked Cards Interaction",
+    href: "/stacked-cards-interaction",
+    media: { type: "video", src: "/videos/stacked-cards-interaction.webm" },
+    description:
+      "Stacked cards interaction component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };
