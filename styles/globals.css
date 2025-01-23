@@ -91,9 +91,6 @@
   }
 }
 
-p {
-  @apply text-stone-500;
-}
 
 .prose {
   margin: 0 !important;

@@ -22,6 +22,7 @@ import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
 import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
 import InputWithTags from "@/components/main/InputWithTags";
 import { StackedCardsInteraction } from "@/components/main/StackedCardsInteraction";
+import AnimatedTabs from "@/components/main/AnimatedTabs";
 
 // add custom components
 const components = {
@@ -39,6 +40,7 @@ const components = {
   InputWithTags,
   StackedCardsInteraction,
   PropsTable,
+  AnimatedTabs,
 };
 
 // can be used for other pages like blogs, Guides etc
