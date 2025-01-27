@@ -53,6 +53,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "Animated tabs interaction component made with framer motion and tailwind css.",
   },
+  {
+    title: "Video Player",
+    href: "/video-player",
+    media: { type: "video", src: "/videos/video-player.webm" },
+    description:
+      "A video player component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };

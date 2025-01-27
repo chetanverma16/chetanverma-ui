@@ -23,6 +23,7 @@ import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
 import InputWithTags from "@/components/main/InputWithTags";
 import { StackedCardsInteraction } from "@/components/main/StackedCardsInteraction";
 import AnimatedTabs from "@/components/main/AnimatedTabs";
+import VideoPlayer from "@/components/main/VideoPlayer";
 
 // add custom components
 const components = {
@@ -41,6 +42,7 @@ const components = {
   StackedCardsInteraction,
   PropsTable,
   AnimatedTabs,
+  VideoPlayer,
 };
 
 // can be used for other pages like blogs, Guides etc
