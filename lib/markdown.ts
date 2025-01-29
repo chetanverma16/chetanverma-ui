@@ -24,6 +24,7 @@ import InputWithTags from "@/components/main/InputWithTags";
 import { StackedCardsInteraction } from "@/components/main/StackedCardsInteraction";
 import AnimatedTabs from "@/components/main/AnimatedTabs";
 import VideoPlayer from "@/components/main/VideoPlayer";
+import AudioPlayer from "@/components/main/AudioPlayer";
 
 // add custom components
 const components = {
@@ -43,6 +44,7 @@ const components = {
   PropsTable,
   AnimatedTabs,
   VideoPlayer,
+  AudioPlayer,
 };
 
 // can be used for other pages like blogs, Guides etc

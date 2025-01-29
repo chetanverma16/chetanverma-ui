@@ -60,6 +60,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "A video player component made with framer motion and tailwind css.",
   },
+  {
+    title: "Audio Player",
+    href: "/audio-player",
+    media: { type: "video", src: "/videos/audio-player.webm" },
+    description:
+      "An audio player component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };
