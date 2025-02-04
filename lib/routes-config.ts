@@ -67,6 +67,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "An audio player component made with framer motion and tailwind css.",
   },
+  {
+    title: "Cycle Status Button",
+    href: "/cycle-status-button",
+    media: { type: "video", src: "/videos/cycle-status-button.webm" },
+    description:
+      "A cycle status button component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };

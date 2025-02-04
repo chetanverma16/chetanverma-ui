@@ -25,7 +25,7 @@ import { StackedCardsInteraction } from "@/components/main/StackedCardsInteracti
 import AnimatedTabs from "@/components/main/AnimatedTabs";
 import VideoPlayer from "@/components/main/VideoPlayer";
 import AudioPlayer from "@/components/main/AudioPlayer";
-
+import CycleStatusButton from "@/components/main/CycleStatusButton";
 // add custom components
 const components = {
   Tabs,
@@ -45,6 +45,7 @@ const components = {
   AnimatedTabs,
   VideoPlayer,
   AudioPlayer,
+  CycleStatusButton,
 };
 
 // can be used for other pages like blogs, Guides etc

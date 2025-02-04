@@ -57,7 +57,7 @@ export default function Home() {
           <Button
             onClick={() => router.push(`/components/${page_routes[0].href}`)}
           >
-            Explore Components
+            Explore all components
           </Button>
           <Button
             onClick={() => window.open("https://webmakers.studio", "_blank")}
@@ -73,7 +73,7 @@ export default function Home() {
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.5, delay: 1.4 }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-2"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
       >
         {ROUTES.map((route, index) => (
           <motion.div

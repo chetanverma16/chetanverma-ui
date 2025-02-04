@@ -26,7 +26,7 @@ const ComponentCard = ({
     <Link href={link}>
       <motion.div
         ref={ref}
-        className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow"
+        className="bg-white rounded-xl h-full overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow"
       >
         <div className="aspect-video w-full overflow-hidden bg-gray-100">
           {media.type === "image" ? (
@@ -47,7 +47,7 @@ const ComponentCard = ({
             />
           )}
         </div>
-        <div className="p-4 text-left">
+        <div className="p-3 text-left">
           <h3 className="font-semibold text-lg">{title}</h3>
           <p className="text-sm text-gray-500">{subtitle}</p>
         </div>
