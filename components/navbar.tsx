@@ -3,20 +3,29 @@
 import Link from "next/link";
 import Anchor from "./anchor";
 import Image from "next/image";
-import { Badge } from "./ui/badge";
 import { page_routes } from "@/lib/routes-config";
-import { Menu } from "lucide-react";
+import { Menu, Package, Github, Link as LinkIcon, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { AnimatePresence, motion } from "framer-motion";
 
 export const NAVLINKS = [
   {
     title: "Components",
     href: `/components/${page_routes[0].href}`,
+    icon: <Package className="w-4 h-4" />,
   },
   {
-    title: "Webmakers Studio",
-    href: "https://webmakers.studio",
+    title: "Github",
+    href: "https://github.com/chetanverma16/chetanverma-ui",
+    icon: <Github className="w-4 h-4" />,
+  },
+  {
+    title: "Chetan Verma",
+    href: "https://chetanverma.com",
+    icon: <LinkIcon className="w-4 h-4" />,
+    type: "primary",
   },
 ];
 
@@ -33,20 +42,36 @@ export function Navbar() {
             <NavMenu />
           </div>
           {/* Mobile Navigation */}
-          <div className="md:hidden z-[100000] relative">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsOpen(!isOpen)}
+          <AnimatePresence>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden z-[100000] relative"
             >
-              <Menu className="h-5 w-5" />
-            </Button>
-            {isOpen && (
-              <div className="absolute right-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg">
-                <NavMenu isDropdown />
-              </div>
-            )}
-          </div>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? (
+                  <X className="h-5 w-5" />
+                ) : (
+                  <Menu className="h-5 w-5" />
+                )}
+              </Button>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  className="absolute right-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg"
+                >
+                  <NavMenu isDropdown />
+                </motion.div>
+              )}
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </nav>
@@ -56,13 +81,8 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-x-1">
-      <Image src="/logo.svg" alt="Webmakers UI" width={24} height={24} />
-      <h2 className="text-sm flex items-center gap-x-2">
-        Webmakers UI{" "}
-        <Badge className="text-xs" variant="outline">
-          Beta
-        </Badge>
-      </h2>
+      <Image src="/logo.svg" alt="Webmakers UI" width={20} height={20} />
+      <h2 className="text-sm flex items-center gap-x-2">chetanverma/ui</h2>
     </Link>
   );
 }
@@ -76,9 +96,14 @@ export function NavMenu({ isDropdown = false }) {
             key={item.title + item.href}
             activeClassName="dark:font-medium font-semibold"
             absolute
-            className="flex items-center gap-1 dark:text-stone-300/85 text-stone-800 p-2 rounded-xl hover:bg-secondary hover:text-gray-900 cursor-pointer"
+            className={cn(
+              "flex items-center gap-1 dark:text-stone-300/85 text-stone-800 p-2 rounded-lg hover:bg-secondary hover:text-gray-900 cursor-pointer transition-all duration-200",
+              item.type === "primary" &&
+                "bg-primary hover:bg-primary/90 hover:text-white text-primary-foreground"
+            )}
             href={item.href}
           >
+            {item.icon}
             {item.title}
           </Anchor>
         );

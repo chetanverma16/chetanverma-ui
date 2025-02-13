@@ -1,10 +1,10 @@
 "use client";
 
 import ComponentCard from "@/components/ComponentCard";
-import { PricingSection } from "@/components/Pricing";
 import { Button } from "@/components/ui/button";
 import { page_routes, ROUTES } from "@/lib/routes-config";
 import { motion, useInView } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
 
@@ -60,10 +60,12 @@ export default function Home() {
             Explore all components
           </Button>
           <Button
-            onClick={() => window.open("https://webmakers.studio", "_blank")}
+            onClick={() => window.open("https://chetanverma.com", "_blank")}
             variant="outline"
+            className="flex items-center gap-2"
           >
-            Hire Us
+            Check out my portfolio
+            <ExternalLink className="w-4 h-4" />
           </Button>
         </motion.div>
       </div>
@@ -96,7 +98,6 @@ export default function Home() {
           </motion.div>
         ))}
       </motion.div>
-      <PricingSection />
     </div>
   );
 }
