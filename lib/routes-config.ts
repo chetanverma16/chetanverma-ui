@@ -74,6 +74,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "A cycle status button component made with framer motion and tailwind css.",
   },
+  {
+    title: "Floating Action Menu",
+    href: "/floating-action-menu",
+    media: { type: "video", src: "/videos/floating-action-menu.webm" },
+    description:
+      "A floating action menu component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };

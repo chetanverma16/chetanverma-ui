@@ -16,6 +16,7 @@ import Outlet from "@/components/main/Markdown/Outlet";
 import Preview from "@/components/main/Preview";
 import Pre from "@/components/main/Markdown/Pre";
 import PropsTable from "@/components/PropsTable";
+
 // Stacking Navbar
 import StackingNavbar from "@/components/main/StackingNavbar";
 import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
@@ -26,6 +27,11 @@ import AnimatedTabs from "@/components/main/AnimatedTabs";
 import VideoPlayer from "@/components/main/VideoPlayer";
 import AudioPlayer from "@/components/main/AudioPlayer";
 import CycleStatusButton from "@/components/main/CycleStatusButton";
+import FloatingActionMenu from "@/components/main/FloatingActionMenu";
+
+// Icons
+import { User, Settings, LogOut } from "lucide-react";
+
 // add custom components
 const components = {
   Tabs,
@@ -35,6 +41,7 @@ const components = {
   Outlet,
   Preview,
   Pre,
+
   // Custom Components
   StackingNavbar,
   StackedImageCardEffect,
@@ -46,6 +53,12 @@ const components = {
   VideoPlayer,
   AudioPlayer,
   CycleStatusButton,
+  FloatingActionMenu,
+
+  // Icons
+  User,
+  Settings,
+  LogOut,
 };
 
 // can be used for other pages like blogs, Guides etc
