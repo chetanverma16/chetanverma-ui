@@ -28,7 +28,7 @@ import VideoPlayer from "@/components/main/VideoPlayer";
 import AudioPlayer from "@/components/main/AudioPlayer";
 import CycleStatusButton from "@/components/main/CycleStatusButton";
 import FloatingActionMenu from "@/components/main/FloatingActionMenu";
-
+import { NotificationPopover } from "@/components/main/NotificationPopover";
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
 
@@ -54,7 +54,7 @@ const components = {
   AudioPlayer,
   CycleStatusButton,
   FloatingActionMenu,
-
+  NotificationPopover,
   // Icons
   User,
   Settings,

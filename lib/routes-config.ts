@@ -81,6 +81,13 @@ export const ROUTES: EachRoute[] = [
     description:
       "A floating action menu component made with framer motion and tailwind css.",
   },
+  {
+    title: "Notification Popover",
+    href: "/notification-popover",
+    media: { type: "video", src: "/videos/notification-popover.webm" },
+    description:
+      "A notification popover component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };
