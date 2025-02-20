@@ -21,12 +21,28 @@ const ComponentCard = ({
   media,
 }: ComponentCardProps) => {
   const ref = useRef(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
 
   return (
     <Link href={link}>
       <motion.div
         ref={ref}
         className="bg-white rounded-xl h-full overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         <div className="aspect-video w-full overflow-hidden bg-gray-100">
           {media.type === "image" ? (
@@ -38,8 +54,8 @@ const ComponentCard = ({
             />
           ) : (
             <video
+              ref={videoRef}
               src={media.src}
-              autoPlay
               loop
               muted
               playsInline
