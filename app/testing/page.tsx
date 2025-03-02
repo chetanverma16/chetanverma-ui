@@ -2,13 +2,13 @@
 
 import React from "react";
 import Preview from "@/components/main/Preview";
-import { NotificationPopover } from "@/components/main/NotificationPopover";
+import BadgeDemo from "@/components/main/Badge/Demo";
+
 const TestingComponents = () => {
   return (
     <div className="w-full h-screen bg-background flex items-center justify-center">
       <Preview>
-        {/* Demo */}
-        <NotificationPopover />
+        <BadgeDemo />
       </Preview>
     </div>
   );

@@ -88,6 +88,12 @@ export const ROUTES: EachRoute[] = [
     description:
       "A notification popover component made with framer motion and tailwind css.",
   },
+  {
+    title: "Badge",
+    href: "/badge",
+    media: { type: "video", src: "/videos/badge.webm" },
+    description: "A badge component made with framer motion and tailwind css.",
+  },
 ];
 
 type Page = { title: string; href: string };
