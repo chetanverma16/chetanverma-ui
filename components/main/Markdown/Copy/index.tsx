@@ -22,7 +22,6 @@ export default function Copy({ content }: { content: string }) {
     <Button
       variant="secondary"
       className="border transition-all duration-300 ease-in-out"
-      size="xs"
       onClick={handleCopy}
     >
       <AnimatePresence>
