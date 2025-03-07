@@ -1,6 +1,6 @@
 "use client";
 
-import { ROUTES } from "@/lib/routes-config";
+import { COMPONENT_ROUTES } from "@/lib/routes-config";
 import SubLink from "./sublink";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -18,7 +18,7 @@ export default function DocsMenu({ isSheet = false }) {
         >
           All Components
         </h4>
-        {ROUTES.map((item, index) => {
+        {COMPONENT_ROUTES.map((item, index) => {
           const modifiedItems = {
             ...item,
             href: `/components${item.href}`,

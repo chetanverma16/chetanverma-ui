@@ -6,7 +6,7 @@ import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
-import { page_routes, ROUTES } from "./routes-config";
+import { COMPONENT_ROUTES } from "./routes-config";
 import { visit } from "unist-util-visit";
 import matter from "gray-matter";
 
@@ -123,10 +123,10 @@ export async function getDocsTocs(slug: string) {
 }
 
 export function getPreviousNext(path: string) {
-  const index = page_routes.findIndex(({ href }) => href == `/${path}`);
+  const index = COMPONENT_ROUTES.findIndex(({ href }) => href == `/${path}`);
   return {
-    prev: page_routes[index - 1],
-    next: page_routes[index + 1],
+    prev: COMPONENT_ROUTES[index - 1],
+    next: COMPONENT_ROUTES[index + 1],
   };
 }
 
@@ -145,18 +145,20 @@ function justGetFrontmatterFromMD<Frontmatter>(rawMd: string): Frontmatter {
 
 export async function getAllChilds(pathString: string) {
   const items = pathString.split("/").filter((it) => it != "");
-  const page_routes_copy = ROUTES;
+  const component_routes_copy = COMPONENT_ROUTES;
 
   let prevHref = "";
   for (const it of items) {
-    const found = page_routes_copy.find((innerIt) => innerIt.href == `/${it}`);
+    const found = component_routes_copy.find(
+      (innerIt) => innerIt.href == `/${it}`
+    );
     if (!found) break;
     prevHref += found.href;
   }
   if (!prevHref) return [];
 
   return await Promise.all(
-    page_routes_copy.map(async (it) => {
+    component_routes_copy.map(async (it) => {
       const totalPath = path.join(
         process.cwd(),
         "/contents/docs/",

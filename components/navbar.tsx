@@ -3,8 +3,15 @@
 import Link from "next/link";
 import Anchor from "./anchor";
 import Image from "next/image";
-import { page_routes } from "@/lib/routes-config";
-import { Menu, Package, Github, Link as LinkIcon, X } from "lucide-react";
+import { COMPONENT_ROUTES } from "@/lib/routes-config";
+import {
+  Menu,
+  Package,
+  Github,
+  Link as LinkIcon,
+  X,
+  LayoutTemplate,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
@@ -12,8 +19,14 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export const NAVLINKS = [
   {
+    title: "Templates",
+    href: `/templates/${COMPONENT_ROUTES[0].href}`,
+    icon: <LayoutTemplate className="w-4 h-4" />,
+    badge: "New",
+  },
+  {
     title: "Components",
-    href: `/components/${page_routes[0].href}`,
+    href: `/components/${COMPONENT_ROUTES[0].href}`,
     icon: <Package className="w-4 h-4" />,
   },
   {
@@ -105,6 +118,11 @@ export function NavMenu({ isDropdown = false }) {
           >
             {item.icon}
             {item.title}
+            {item.badge && (
+              <span className="ml-2 px-1.5 py-0.5 text-xs rounded-md bg-primary/10 text-primary">
+                {item.badge}
+              </span>
+            )}
           </Anchor>
         );
         return isDropdown ? (
