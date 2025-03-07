@@ -1,7 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { EachRoute, COMPONENT_ROUTES } from "./routes-config";
-
+import { COMPONENT_ROUTES } from "./routes-config";
+import { EachRoute } from "@/types";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -10,7 +10,7 @@ export function helperSearch(query: string, node: EachRoute, prefix: string) {
   const res: EachRoute[] = [];
   const nextLink = `${prefix}${node.href}`;
 
-  if (!node.noLink && node.title.toLowerCase().includes(query.toLowerCase())) {
+  if (node.title.toLowerCase().includes(query.toLowerCase())) {
     res.push({ ...node, href: nextLink });
   }
 

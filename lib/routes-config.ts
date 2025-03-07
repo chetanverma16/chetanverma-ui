@@ -16,7 +16,7 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
 export const COMPONENT_ROUTES: EachRoute[] = [
   {
     title: "Stacking Navbar",
-    href: "/stacking-navbar",
+    href: "components/stacking-navbar",
     media: { type: "video", src: "/videos/components/stacking-navbar.webm" },
     description:
       "A simple stacking navbar component made with framer motion and tailwind css.",
@@ -25,7 +25,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Stacked Image Card Effect",
-    href: "/stacked-image-card-effect",
+    href: "components/stacked-image-card-effect",
     media: {
       type: "video",
       src: "/videos/components/stacked-image-card-effect.webm",
@@ -37,7 +37,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Dropdown Menu",
-    href: "/dropdown-menu",
+    href: "components/dropdown-menu",
     media: {
       type: "video",
       src: "/videos/components/dropdown-menu.webm",
@@ -48,7 +48,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Input With Tags",
-    href: "/input-with-tags",
+    href: "components/input-with-tags",
     media: {
       type: "video",
       src: "/videos/components/input-with-tags.webm",
@@ -60,7 +60,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Stacked Cards Interaction",
-    href: "/stacked-cards-interaction",
+    href: "components/stacked-cards-interaction",
     media: {
       type: "video",
       src: "/videos/components/stacked-cards-interaction.webm",
@@ -72,7 +72,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Animated Tabs",
-    href: "/animated-tabs",
+    href: "components/animated-tabs",
     media: {
       type: "video",
       src: "/videos/components/animated-tabs.webm",
@@ -84,7 +84,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Video Player",
-    href: "/video-player",
+    href: "components/video-player",
     media: {
       type: "video",
       src: "/videos/components/video-player.webm",
@@ -96,7 +96,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Audio Player",
-    href: "/audio-player",
+    href: "components/audio-player",
     media: {
       type: "video",
       src: "/videos/components/audio-player.webm",
@@ -108,7 +108,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Cycle Status Button",
-    href: "/cycle-status-button",
+    href: "components/cycle-status-button",
     media: {
       type: "video",
       src: "/videos/components/cycle-status-button.webm",
@@ -120,7 +120,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Floating Action Menu",
-    href: "/floating-action-menu",
+    href: "components/floating-action-menu",
     media: {
       type: "video",
       src: "/videos/components/floating-action-menu.webm",
@@ -132,7 +132,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Notification Popover",
-    href: "/notification-popover",
+    href: "components/notification-popover",
     media: {
       type: "video",
       src: "/videos/components/notification-popover.webm",
@@ -144,7 +144,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Badge",
-    href: "/badge",
+    href: "components/badge",
     media: {
       type: "video",
       src: "/videos/components/badge.webm",
