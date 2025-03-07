@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { templates } from "@/lib/template-data";
 
 type TemplatePageProps = {
-  params: { templateid: string };
+  params: Promise<{ templateid: string }>;
 };
 
 export default async function TemplatePage({ params }: TemplatePageProps) {
