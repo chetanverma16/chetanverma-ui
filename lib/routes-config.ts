@@ -5,7 +5,7 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
     title: "Mosaic",
     href: "template/1",
     badge: "Astro.js",
-    media: { type: "image", src: "/images/templates/mosaic.png" },
+    media: { type: "image", src: "/images/templates/mosaic.webp" },
     description:
       "A simple mosaic template made with Astro.js and Tailwind CSS.",
     templateTags: ["blog", "portfolio"],
