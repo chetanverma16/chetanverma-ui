@@ -11,6 +11,16 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
     templateTags: ["blog", "portfolio"],
     type: "template",
   },
+  {
+    title: "Agency",
+    href: "template/2",
+    badge: "Astro.js",
+    media: { type: "image", src: "/images/templates/agency-astro.webp" },
+    description:
+      "A simple agency template made with Astro.js and Tailwind CSS.",
+    templateTags: ["agency", "blog", "portfolio"],
+    type: "template",
+  },
 ];
 
 export const COMPONENT_ROUTES: EachRoute[] = [

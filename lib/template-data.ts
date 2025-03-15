@@ -8,4 +8,10 @@ export const templates: Template[] = [
     href: "https://mosaic-template.pages.dev",
     github: "https://github.com/chetanverma16/mosaic-template-astro",
   },
+  {
+    id: "2",
+    title: "Agency",
+    href: "https://agency-astro-template.pages.dev/",
+    github: "https://github.com/chetanverma16/agency-landing-astro-template",
+  },
 ];

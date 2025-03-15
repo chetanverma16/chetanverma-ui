@@ -76,21 +76,14 @@ export default function Home() {
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            Beautiful UI Components & Templates
+            Open Source Beautiful Crafted
           </motion.span>
           <motion.span
             initial={{ opacity: 0, y: 5, filter: "blur(10px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
-            React, Typescript, Tailwind CSS,{" "}
-          </motion.span>
-          <motion.span
-            initial={{ opacity: 0, y: 5, filter: "blur(10px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.3, delay: 0.4 }}
-          >
-            and Motion.
+            UI Blocks, Components & Templates
           </motion.span>
         </h1>
         <motion.p
@@ -98,8 +91,8 @@ export default function Home() {
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.3, delay: 0.5 }}
         >
-          Drop in beautifully crafted components and templates with just a copy
-          and paste. Ready-made styles and animations included.
+          Drop in ready-to-use open-source UI blocks, components, and templates
+          with seamless styles and animations. Just copy, paste, and build.
         </motion.p>
 
         <motion.div

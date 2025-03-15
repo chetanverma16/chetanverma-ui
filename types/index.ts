@@ -28,8 +28,7 @@ export type TemplateTag =
   | "saas"
   | "portfolio"
   | "e-commerce"
-  | "agency"
-  | "astro-js";
+  | "agency";
 
 // Component Tags
 export type ComponentTag =
@@ -77,5 +76,4 @@ export const templateTags: TemplateTag[] = [
   "portfolio",
   "e-commerce",
   "agency",
-  "astro-js",
 ];
