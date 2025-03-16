@@ -2,8 +2,10 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/button";
+import { Badge } from "../ui/badge";
 import { Template } from "@/types";
-import { MonitorDot, TabletSmartphone } from "lucide-react";
+import { ArrowLeft, MonitorDot, TabletSmartphone } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 type TemplateviewProps = {
   template: Template;
@@ -13,11 +15,18 @@ const Templateview = ({ template }: TemplateviewProps) => {
   const [currentView, setCurrentView] = useState<"mobile" | "desktop">(
     "desktop"
   );
+  const router = useRouter();
   return (
     <div className="flex flex-col gap-8 p-6">
       {/* Mobile View */}
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">{template.title}</h1>
+        <div className="flex items-center gap-x-2">
+          <Button variant="outline" size="icon" onClick={() => router.back()}>
+            <ArrowLeft size={14} />
+          </Button>
+          <h1 className="text-2xl font-bold">{template.title}</h1>
+          <Badge variant="outline">{template.badge}</Badge>
+        </div>
         <div className="flex items-center gap-x-2">
           <Button
             variant={currentView === "mobile" ? "default" : "outline"}

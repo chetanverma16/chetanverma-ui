@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { Footer } from "@/components/footer";
 import Script from "next/script";
+import { Provider } from "jotai";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -35,23 +36,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} font-regular antialiased tracking-wide p-4 lg:p-0`}
-        suppressHydrationWarning
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+      <Provider>
+        <body
+          className={`${inter.className} font-regular antialiased tracking-wide p-4 lg:p-0`}
+          suppressHydrationWarning
         >
-          <main className="w-full max-w-6xl mx-auto h-auto scroll-smooth mb-10">
-            <Navbar />
-            {children}
-            <Footer />
-          </main>
-        </ThemeProvider>
-      </body>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main className="w-full max-w-6xl mx-auto h-auto scroll-smooth mb-10">
+              <Navbar />
+              {children}
+              <Footer />
+            </main>
+          </ThemeProvider>
+        </body>
+      </Provider>
       <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
     </html>
   );

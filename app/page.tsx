@@ -116,10 +116,10 @@ export default function Home() {
         animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         transition={{ duration: 0.3, delay: 0.7 }}
       >
-        <Tabs defaultValue="templates" className="w-full">
+        <Tabs defaultValue="components" className="w-full">
           <TabsList>
-            <TabsTrigger value="templates">Templates</TabsTrigger>
             <TabsTrigger value="components">Components</TabsTrigger>
+            <TabsTrigger value="templates">Templates</TabsTrigger>
           </TabsList>
           <TabsContent value="components" className="my-5">
             <div className="flex flex-col gap-y-2">
@@ -139,7 +139,13 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {componentsFiltered.map((route) => (
-                  <GenericCard key={route.href} {...route} />
+                  <GenericCard
+                    key={route.href}
+                    title={route.title}
+                    href={`/components/${route.href}`}
+                    type={route.type}
+                    media={route.media}
+                  />
                 ))}
               </div>
             </div>

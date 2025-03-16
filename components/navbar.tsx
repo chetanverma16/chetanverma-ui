@@ -20,7 +20,7 @@ import { AnimatePresence, motion } from "framer-motion";
 export const NAVLINKS = [
   {
     title: "Templates",
-    href: `/templates/${COMPONENT_ROUTES[0].href}`,
+    href: `/all-templates`,
     icon: <LayoutTemplate className="w-4 h-4" />,
     badge: "New",
   },

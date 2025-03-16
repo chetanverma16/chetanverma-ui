@@ -19,7 +19,8 @@ export interface Template {
   title: string;
   href: string; // Deployed template URL for preview
   github: string; // GitHub repository URL
-  // ... other template properties
+  badge?: string;
+  description?: string;
 }
 
 // Template Tags
