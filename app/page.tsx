@@ -142,6 +142,7 @@ export default function Home() {
                   <GenericCard
                     key={route.href}
                     title={route.title}
+                    description={route.description}
                     href={`/components/${route.href}`}
                     type={route.type}
                     media={route.media}
