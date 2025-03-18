@@ -2,8 +2,18 @@ import { EachRoute } from "@/types";
 
 export const TEMPLATE_ROUTES: EachRoute[] = [
   {
-    title: "Mosaic",
+    title: "React Portfolio Template",
     href: "template/1",
+    badge: "Next.js",
+    media: { type: "image", src: "/images/templates/react-portfolio.webp" },
+    description:
+      "Modern portfolio template made with Next.js, Tailwind CSS, and Framer Motion.",
+    templateTags: ["blog", "portfolio"],
+    type: "template",
+  },
+  {
+    title: "Mosaic",
+    href: "template/2",
     badge: "Astro.js",
     media: { type: "image", src: "/images/templates/mosaic.webp" },
     description:
@@ -13,7 +23,7 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
   },
   {
     title: "Agency",
-    href: "template/2",
+    href: "template/3",
     badge: "Astro.js",
     media: { type: "image", src: "/images/templates/agency-astro.webp" },
     description:
