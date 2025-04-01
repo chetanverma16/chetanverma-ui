@@ -173,4 +173,17 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     componentTags: ["badge", "button"],
     type: "component",
   },
+  {
+    title: "Kanban Board",
+    href: "/kanban-board",
+    media: {
+      type: "video",
+      src: "/videos/components/kanban-board.webm",
+    },
+    description:
+      "A kanban board component made with framer motion and tailwind css.",
+    componentTags: ["kanban", "card"],
+    type: "component",
+    badge: "New",
+  },
 ];

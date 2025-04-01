@@ -49,7 +49,8 @@ export type ComponentTag =
   | "popover"
   | "accordion"
   | "tabs"
-  | "image";
+  | "image"
+  | "kanban";
 
 export const componentsTags: ComponentTag[] = [
   "navbar",
@@ -69,6 +70,7 @@ export const componentsTags: ComponentTag[] = [
   "accordion",
   "tabs",
   "image",
+  "kanban",
 ];
 
 export const templateTags: TemplateTag[] = [

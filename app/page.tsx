@@ -138,7 +138,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {componentsFiltered.map((route) => (
+                {[...componentsFiltered].reverse().map((route) => (
                   <GenericCard
                     key={route.href}
                     title={route.title}
@@ -146,6 +146,7 @@ export default function Home() {
                     href={`/components/${route.href}`}
                     type={route.type}
                     media={route.media}
+                    badge={route.badge}
                   />
                 ))}
               </div>

@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import Preview from "@/components/main/Preview";
-import KanbanBoard from "@/components/main/KanbanBoard";
-import { mockData } from "@/components/main/KanbanBoard/mockData";
-import { TaskStatus } from "@/components/main/KanbanBoard/types";
-const TestingComponents = () => {
+import React, { useState, useCallback } from "react";
+import { TaskStatus } from "../types";
+import { mockData } from "../mockData";
+import KanbanBoard from "..";
+
+const KanbanBoardView = () => {
   const [tasks, setTasks] = useState(mockData);
 
   const handleDragEnd = (taskId: number, newStatus: string) => {
@@ -47,27 +47,22 @@ const TestingComponents = () => {
         return formattedStatus;
     }
   }, []);
-
   return (
-    <div className="w-full h-screen bg-background flex items-center justify-center">
-      <Preview>
-        <KanbanBoard
-          formatStatus={formatStatus}
-          tasks={tasks}
-          setExpandedTaskId={(id) => {
-            console.log(id);
-          }}
-          setUpdateTaskId={(id) => {
-            console.log(id);
-          }}
-          deleteTask={(id) => {
-            console.log(id);
-          }}
-          onDragEnd={handleDragEnd}
-        />
-      </Preview>
-    </div>
+    <KanbanBoard
+      formatStatus={formatStatus}
+      tasks={tasks}
+      setExpandedTaskId={(id) => {
+        console.log(id);
+      }}
+      setUpdateTaskId={(id) => {
+        console.log(id);
+      }}
+      deleteTask={(id) => {
+        console.log(id);
+      }}
+      onDragEnd={handleDragEnd}
+    />
   );
 };
 
-export default TestingComponents;
+export default KanbanBoardView;
