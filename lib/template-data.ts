@@ -17,7 +17,7 @@ export const templates: Template[] = [
     badge: "Astro.js",
   },
   {
-    id: "2",
+    id: "3",
     title: "Agency",
     href: "https://agency-astro-template.pages.dev/",
     github: "https://github.com/chetanverma16/agency-landing-astro-template",
