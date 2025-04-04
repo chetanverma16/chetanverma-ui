@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useCallback } from "react";
 import Link from "next/link";
 import { motion, useInView } from "framer-motion";
 import { EachRoute } from "@/types";
@@ -18,18 +18,20 @@ const ComponentCard = ({
   const isInView = useInView(ref, { once: true });
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = useCallback(() => {
     if (videoRef.current) {
-      videoRef.current.play();
+      videoRef.current.play().catch(() => {
+        // Silently handle autoplay failures
+      });
     }
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
-  };
+  }, []);
 
   return (
     <Link href={href}>
@@ -52,6 +54,7 @@ const ComponentCard = ({
               src={media.src}
               alt={title}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           ) : (
             <video
@@ -60,6 +63,7 @@ const ComponentCard = ({
               loop
               muted
               playsInline
+              preload="metadata"
               className="w-full h-full object-cover"
             />
           )}
