@@ -31,6 +31,7 @@ import FloatingActionMenu from "@/components/main/FloatingActionMenu";
 import { NotificationPopover } from "@/components/main/NotificationPopover";
 import BadgeDemo from "@/components/main/Badge/Demo";
 import KanbanBoardView from "@/components/main/KanbanBoard/KanbanBoardView";
+import Switch from "@/components/main/Switch";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -60,6 +61,7 @@ const components = {
   NotificationPopover,
   BadgeDemo,
   KanbanBoardView,
+  Switch,
 
   // Icons
   User,

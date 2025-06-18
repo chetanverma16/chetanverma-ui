@@ -50,7 +50,9 @@ export type ComponentTag =
   | "accordion"
   | "tabs"
   | "image"
-  | "kanban";
+  | "kanban"
+  | "switch"
+  | "toggle";
 
 export const componentsTags: ComponentTag[] = [
   "navbar",
@@ -71,6 +73,8 @@ export const componentsTags: ComponentTag[] = [
   "tabs",
   "image",
   "kanban",
+  "switch",
+  "toggle",
 ];
 
 export const templateTags: TemplateTag[] = [
