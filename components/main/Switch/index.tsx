@@ -18,8 +18,6 @@ const Switch = ({ checked = false, onCheckedChange }: SwitchProps) => {
     onCheckedChange?.(newValue);
   };
 
-  //
-
   return (
     <motion.button
       role="switch"
