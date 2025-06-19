@@ -188,13 +188,24 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   },
   {
     title: "Switch",
-    href: "/switch",
+    href: "/switch-component",
     media: {
       type: "video",
       src: "/videos/components/switch.webm",
     },
     description: "A switch component made with framer motion and tailwind css.",
     componentTags: ["switch", "button", "toggle"],
+    type: "component",
+  },
+  {
+    title: "Alert",
+    href: "/alert",
+    media: {
+      type: "video",
+      src: "/videos/components/alert.webm",
+    },
+    description: "An alert component made with framer motion and tailwind css.",
+    componentTags: ["alert", "button"],
     type: "component",
   },
 ];

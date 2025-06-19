@@ -32,6 +32,7 @@ import { NotificationPopover } from "@/components/main/NotificationPopover";
 import BadgeDemo from "@/components/main/Badge/Demo";
 import KanbanBoardView from "@/components/main/KanbanBoard/KanbanBoardView";
 import Switch from "@/components/main/Switch";
+import Alert from "@/components/main/Alert";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -62,6 +63,7 @@ const components = {
   BadgeDemo,
   KanbanBoardView,
   Switch,
+  Alert,
 
   // Icons
   User,
