@@ -13,37 +13,37 @@ const TestingComponents = () => {
               id: 1,
               name: "John Doe",
               designation: "Software Engineer",
-              image: "https://randomuser.me/api/portraits/men/60.jpg",
+              image: "/images/profile/1.png",
             },
             {
               id: 2,
               name: "Jane Smith",
               designation: "Product Manager",
-              image: "https://randomuser.me/api/portraits/men/61.jpg",
+              image: "/images/profile/2.png",
             },
             {
               id: 3,
               name: "Jim Beam",
               designation: "Marketing Manager",
-              image: "https://randomuser.me/api/portraits/men/62.jpg",
+              image: "/images/profile/3.png",
             },
             {
               id: 4,
               name: "John Doe",
               designation: "Software Engineer",
-              image: "https://randomuser.me/api/portraits/men/63.jpg",
+              image: "/images/profile/4.png",
             },
             {
               id: 5,
               name: "John Doe",
               designation: "Software Engineer",
-              image: "https://randomuser.me/api/portraits/men/64.jpg",
+              image: "/images/profile/5.png",
             },
             {
               id: 6,
               name: "John Doe",
               designation: "Software Engineer",
-              image: "https://randomuser.me/api/portraits/men/65.jpg",
+              image: "/images/profile/6.png",
             },
           ]}
           maxVisible={5}
