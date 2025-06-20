@@ -33,6 +33,7 @@ import BadgeDemo from "@/components/main/Badge/Demo";
 import KanbanBoardView from "@/components/main/KanbanBoard/KanbanBoardView";
 import Switch from "@/components/main/Switch";
 import Alert from "@/components/main/Alert";
+import AvatarGroup from "@/components/main/AvatarGroup";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -64,6 +65,7 @@ const components = {
   KanbanBoardView,
   Switch,
   Alert,
+  AvatarGroup,
 
   // Icons
   User,

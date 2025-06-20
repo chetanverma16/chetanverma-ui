@@ -3,11 +3,13 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { EachRoute } from "@/types";
+import { Badge } from "./ui/badge";
 
 export default function SubLink({
   title,
   href,
-}: EachRoute & { level: number; isSheet: boolean }) {
+  badge,
+}: EachRoute & { level: number; isSheet: boolean; badge?: string }) {
   const path = usePathname();
   const [isActive, setIsActive] = useState(false);
 
@@ -27,7 +29,7 @@ export default function SubLink({
         activeClassName="text-primary dark:font-medium font-semibold"
         href={href}
       >
-        {title}
+        {title} {badge && <Badge variant="outline">{badge}</Badge>}
       </Anchor>
     </div>
   );

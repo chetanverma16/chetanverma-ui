@@ -1,18 +1,54 @@
 "use client";
 
-import Alert from "@/components/main/Alert";
 import Preview from "@/components/main/Preview";
+import AvatarGroup from "@/components/main/AvatarGroup";
 
 const TestingComponents = () => {
   return (
     <div className="w-full h-screen bg-background flex items-center justify-center">
       <Preview>
-        <div className="flex flex-col gap-4">
-          <Alert type="success" message="This is a success alert." />
-          <Alert type="error" message="This is an error alert." />
-          <Alert type="warning" message="This is a warning alert." />
-          <Alert type="info" message="This is an info alert." />
-        </div>
+        <AvatarGroup
+          items={[
+            {
+              id: 1,
+              name: "John Doe",
+              designation: "Software Engineer",
+              image: "https://randomuser.me/api/portraits/men/60.jpg",
+            },
+            {
+              id: 2,
+              name: "Jane Smith",
+              designation: "Product Manager",
+              image: "https://randomuser.me/api/portraits/men/61.jpg",
+            },
+            {
+              id: 3,
+              name: "Jim Beam",
+              designation: "Marketing Manager",
+              image: "https://randomuser.me/api/portraits/men/62.jpg",
+            },
+            {
+              id: 4,
+              name: "John Doe",
+              designation: "Software Engineer",
+              image: "https://randomuser.me/api/portraits/men/63.jpg",
+            },
+            {
+              id: 5,
+              name: "John Doe",
+              designation: "Software Engineer",
+              image: "https://randomuser.me/api/portraits/men/64.jpg",
+            },
+            {
+              id: 6,
+              name: "John Doe",
+              designation: "Software Engineer",
+              image: "https://randomuser.me/api/portraits/men/65.jpg",
+            },
+          ]}
+          maxVisible={5}
+          size="md"
+        />
       </Preview>
     </div>
   );

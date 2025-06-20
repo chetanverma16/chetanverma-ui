@@ -1,0 +1,423 @@
+---
+title: Avatar Group
+description: An avatar group component made with framer motion and tailwind css.
+---
+
+## Preview
+
+<Preview>
+  <AvatarGroup
+    items={[
+      {
+        id: 1,
+        name: "John Doe",
+        designation: "Software Engineer",
+        image: "https://randomuser.me/api/portraits/men/60.jpg",
+      },
+      {
+        id: 2,
+        name: "Jane Smith",
+        designation: "Product Manager",
+        image: "https://randomuser.me/api/portraits/men/61.jpg",
+      },
+      {
+        id: 3,
+        name: "Jim Beam",
+        designation: "Marketing Manager",
+        image: "https://randomuser.me/api/portraits/men/62.jpg",
+      },
+      {
+        id: 4,
+        name: "John Doe",
+        designation: "Software Engineer",
+        image: "https://randomuser.me/api/portraits/men/63.jpg",
+      },
+      {
+        id: 5,
+        name: "John Doe",
+        designation: "Software Engineer",
+        image: "https://randomuser.me/api/portraits/men/64.jpg",
+      },
+      {
+        id: 6,
+        name: "John Doe",
+        designation: "Software Engineer",
+        image: "https://randomuser.me/api/portraits/men/65.jpg",
+      },
+    ]}
+    maxVisible={5}
+  />
+</Preview>
+
+## Types
+
+```tsx
+interface AvatarItem {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+}
+export interface AvatarGroupProps {
+  items: AvatarItem[];
+  className?: string;
+  maxVisible?: number;
+  size?: "sm" | "md" | "lg";
+}
+```
+
+## Code
+
+<Pre
+  raw={`
+  "use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+interface AvatarItem {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+}
+
+interface AvatarGroupProps {
+  items: AvatarItem[];
+  className?: string;
+  maxVisible?: number;
+  size?: "sm" | "md" | "lg";
+}
+
+// Individual Avatar Component
+const Avatar = ({
+  item,
+  index,
+  totalItems,
+  size,
+  isHovered,
+  onHover,
+  onLeave,
+}: {
+  item: AvatarItem;
+  index: number;
+  totalItems: number;
+  size: "sm" | "md" | "lg";
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
+}) => {
+  const sizeClasses = {
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-12 w-12",
+  };
+
+  return (
+    <div
+      className="relative group flex items-center justify-center"
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      style={{
+        marginLeft: index === 0 ? 0 : "-0.5rem",
+        zIndex: totalItems - index,
+      }}
+    >
+      <AnimatePresence mode="popLayout">
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 20,
+              },
+            }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute -top-16 whitespace-nowrap flex text-xs flex-col items-center justify-center rounded-xl bg-white z-50 shadow-lg px-4 py-2 border min-w-max"
+          >
+            <div className="font-bold text-gray-900 relative z-30 text-base text-center">
+              {item.name}
+            </div>
+            <div className="text-gray-600 text-xs text-center">
+              {item.designation}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        whileHover={{ scale: 1.05, zIndex: 100 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        className="relative"
+      >
+        <Image
+          height={100}
+          width={100}
+          src={item.image}
+          alt={item.name}
+          className={cn(
+            "object-cover rounded-full border-2 border-background transition duration-300",
+            sizeClasses[size]
+          )}
+        />
+      </motion.div>
+    </div>
+  );
+};
+
+const AvatarGroup = ({
+  items,
+  className,
+  maxVisible = 5,
+  size = "md",
+}: AvatarGroupProps) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const visibleItems = items.slice(0, maxVisible);
+  const remainingCount = items.length - maxVisible;
+
+  return (
+    <div className={cn("flex items-center justify-center", className)}>
+      {visibleItems.map((item, index) => (
+        <Avatar
+          key={item.id}
+          item={item}
+          index={index}
+          totalItems={visibleItems.length}
+          size={size}
+          isHovered={hoveredIndex === item.id}
+          onHover={() => setHoveredIndex(item.id)}
+          onLeave={() => setHoveredIndex(null)}
+        />
+      ))}
+
+      {remainingCount > 0 && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className={cn(
+            "flex items-center justify-center rounded-full border-2 border-background bg-muted text-muted-foreground font-medium",
+            size === "sm"
+              ? "h-8 w-8"
+              : size === "md"
+              ? "h-10 w-10"
+              : "h-12 w-12",
+            "ml-[-0.5rem]"
+          )}
+        >
+          +{remainingCount}
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+export default AvatarGroup;
+
+`}
+>
+```tsx: 
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
+
+interface AvatarItem {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+}
+
+interface AvatarGroupProps {
+  items: AvatarItem[];
+  className?: string;
+  maxVisible?: number;
+  size?: "sm" | "md" | "lg";
+}
+
+// Individual Avatar Component
+const Avatar = ({
+  item,
+  index,
+  totalItems,
+  size,
+  isHovered,
+  onHover,
+  onLeave,
+}: {
+  item: AvatarItem;
+  index: number;
+  totalItems: number;
+  size: "sm" | "md" | "lg";
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
+}) => {
+  const sizeClasses = {
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-12 w-12",
+  };
+
+  return (
+    <div
+      className="relative group flex items-center justify-center"
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      style={{
+        marginLeft: index === 0 ? 0 : "-0.5rem",
+        zIndex: totalItems - index,
+      }}
+    >
+      <AnimatePresence mode="popLayout">
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                type: "spring",
+                stiffness: 200,
+                damping: 20,
+              },
+            }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className="absolute -top-16 whitespace-nowrap flex text-xs flex-col items-center justify-center rounded-xl bg-white z-50 shadow-lg px-4 py-2 border min-w-max"
+          >
+            <div className="font-bold text-gray-900 relative z-30 text-base text-center">
+              {item.name}
+            </div>
+            <div className="text-gray-600 text-xs text-center">
+              {item.designation}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <motion.div
+        whileHover={{ scale: 1.05, zIndex: 100 }}
+        transition={{ type: "spring", stiffness: 200, damping: 15 }}
+        className="relative"
+      >
+        <Image
+          height={100}
+          width={100}
+          src={item.image}
+          alt={item.name}
+          className={cn(
+            "object-cover rounded-full border-2 border-background transition duration-300",
+            sizeClasses[size]
+          )}
+        />
+      </motion.div>
+    </div>
+  );
+};
+
+const AvatarGroup = ({
+  items,
+  className,
+  maxVisible = 5,
+  size = "md",
+}: AvatarGroupProps) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const visibleItems = items.slice(0, maxVisible);
+  const remainingCount = items.length - maxVisible;
+
+  return (
+    <div className={cn("flex items-center justify-center", className)}>
+      {visibleItems.map((item, index) => (
+        <Avatar
+          key={item.id}
+          item={item}
+          index={index}
+          totalItems={visibleItems.length}
+          size={size}
+          isHovered={hoveredIndex === item.id}
+          onHover={() => setHoveredIndex(item.id)}
+          onLeave={() => setHoveredIndex(null)}
+        />
+      ))}
+
+      {remainingCount > 0 && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className={cn(
+            "flex items-center justify-center rounded-full border-2 border-background bg-muted text-muted-foreground font-medium",
+            size === "sm"
+              ? "h-8 w-8"
+              : size === "md"
+              ? "h-10 w-10"
+              : "h-12 w-12",
+            "ml-[-0.5rem]"
+          )}
+        >
+          +{remainingCount}
+        </motion.div>
+      )}
+    </div>
+  );
+};
+
+export default AvatarGroup;
+```
+</Pre>
+
+## Usage
+
+```tsx
+<AvatarGroup
+  items={[
+    {
+      id: 1,
+      name: "John Doe",
+      designation: "Software Engineer",
+      image: "https://randomuser.me/api/portraits/men/60.jpg",
+    },
+  ]}
+/>
+```
+
+## Props
+
+<PropsTable
+  props={[
+    {
+      name: "items",
+      type: "AvatarItem[]",
+      description: "The items to display in the avatar group.",
+      required: true,
+    },
+    {
+      name: "className",
+      type: "string",
+      description: "The class name to apply to the avatar group.",
+      required: false,
+    },
+    {
+      name: "maxVisible",
+      type: "number",
+      description:
+        "The maximum number of items to display in the avatar group.",
+      required: false,
+    },
+    {
+      name: "size",
+      type: "sm | md | lg",
+      description: "The size of the avatar group.",
+      required: false,
+    },
+  ]}
+/>

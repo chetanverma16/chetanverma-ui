@@ -184,7 +184,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
       "A kanban board component made with framer motion and tailwind css.",
     componentTags: ["kanban", "card"],
     type: "component",
-    badge: "New",
   },
   {
     title: "Switch",
@@ -200,6 +199,7 @@ export const COMPONENT_ROUTES: EachRoute[] = [
   {
     title: "Alert",
     href: "/alert",
+    badge: "New",
     media: {
       type: "video",
       src: "/videos/components/alert.webm",
@@ -207,5 +207,18 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     description: "An alert component made with framer motion and tailwind css.",
     componentTags: ["alert", "button"],
     type: "component",
+  },
+  {
+    title: "Avatar Group",
+    href: "/avatar-group",
+    media: {
+      type: "video",
+      src: "/videos/components/avatar-group.webm",
+    },
+    description:
+      "An avatar group component made with framer motion and tailwind css.",
+    componentTags: ["avatar"],
+    type: "component",
+    badge: "New",
   },
 ];
