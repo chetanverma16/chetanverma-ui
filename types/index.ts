@@ -53,7 +53,8 @@ export type ComponentTag =
   | "kanban"
   | "switch"
   | "toggle"
-  | "alert";
+  | "alert"
+  | "calendar";
 
 export const componentsTags: ComponentTag[] = [
   "navbar",
@@ -77,6 +78,7 @@ export const componentsTags: ComponentTag[] = [
   "switch",
   "toggle",
   "alert",
+  "calendar",
 ];
 
 export const templateTags: TemplateTag[] = [

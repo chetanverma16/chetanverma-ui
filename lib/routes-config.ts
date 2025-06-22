@@ -219,6 +219,18 @@ export const COMPONENT_ROUTES: EachRoute[] = [
       "An avatar group component made with framer motion and tailwind css.",
     componentTags: ["avatar"],
     type: "component",
+  },
+  {
+    title: "Calendar",
+    href: "/calendar",
+    media: {
+      type: "video",
+      src: "/videos/components/calendar.webm",
+    },
+    description:
+      "A calendar component made with framer motion and tailwind css.",
+    componentTags: ["calendar"],
+    type: "component",
     badge: "New",
   },
 ];
