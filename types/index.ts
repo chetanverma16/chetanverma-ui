@@ -10,8 +10,6 @@ export type EachRoute = {
   };
   description?: string;
   badge?: string;
-  templateTags?: TemplateTag[];
-  componentTags?: ComponentTag[];
 };
 
 export interface Template {
@@ -22,69 +20,3 @@ export interface Template {
   badge?: string;
   description?: string;
 }
-
-// Template Tags
-export type TemplateTag =
-  | "blog"
-  | "saas"
-  | "portfolio"
-  | "e-commerce"
-  | "agency";
-
-// Component Tags
-export type ComponentTag =
-  | "navbar"
-  | "card"
-  | "form"
-  | "modal"
-  | "table"
-  | "dropdown"
-  | "slider"
-  | "input"
-  | "button"
-  | "media"
-  | "badge"
-  | "avatar"
-  | "tooltip"
-  | "popover"
-  | "accordion"
-  | "tabs"
-  | "image"
-  | "kanban"
-  | "switch"
-  | "toggle"
-  | "alert"
-  | "calendar";
-
-export const componentsTags: ComponentTag[] = [
-  "navbar",
-  "card",
-  "form",
-  "modal",
-  "table",
-  "dropdown",
-  "slider",
-  "input",
-  "button",
-  "media",
-  "badge",
-  "avatar",
-  "tooltip",
-  "popover",
-  "accordion",
-  "tabs",
-  "image",
-  "kanban",
-  "switch",
-  "toggle",
-  "alert",
-  "calendar",
-];
-
-export const templateTags: TemplateTag[] = [
-  "blog",
-  "saas",
-  "portfolio",
-  "e-commerce",
-  "agency",
-];

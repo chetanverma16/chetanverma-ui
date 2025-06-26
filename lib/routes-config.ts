@@ -8,7 +8,6 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
     media: { type: "image", src: "/images/templates/react-portfolio.webp" },
     description:
       "Modern portfolio template made with Next.js, Tailwind CSS, and Framer Motion.",
-    templateTags: ["blog", "portfolio"],
     type: "template",
   },
   {
@@ -18,7 +17,6 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
     media: { type: "image", src: "/images/templates/mosaic.webp" },
     description:
       "A simple mosaic template made with Astro.js and Tailwind CSS.",
-    templateTags: ["blog", "portfolio"],
     type: "template",
   },
   {
@@ -28,7 +26,6 @@ export const TEMPLATE_ROUTES: EachRoute[] = [
     media: { type: "image", src: "/images/templates/agency-astro.webp" },
     description:
       "A simple agency template made with Astro.js and Tailwind CSS.",
-    templateTags: ["agency", "blog", "portfolio"],
     type: "template",
   },
 ];
@@ -40,7 +37,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     media: { type: "video", src: "/videos/components/stacking-navbar.webm" },
     description:
       "A simple stacking navbar component made with framer motion and tailwind css.",
-    componentTags: ["navbar", "button"],
     type: "component",
   },
   {
@@ -52,7 +48,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A simple stacked image card effect component made with motion and tailwind css.",
-    componentTags: ["card", "image"],
     type: "component",
   },
   {
@@ -63,7 +58,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
       src: "/videos/components/dropdown-menu.webm",
     },
     description: "Dropdown menu component with framer motion and tailwind css.",
-    componentTags: ["dropdown", "button"],
     type: "component",
   },
   {
@@ -75,7 +69,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "Input with tags component made with framer motion and tailwind css.",
-    componentTags: ["input", "button", "badge"],
     type: "component",
   },
   {
@@ -87,7 +80,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "Stacked cards interaction component made with framer motion and tailwind css.",
-    componentTags: ["card", "button", "image"],
     type: "component",
   },
   {
@@ -99,7 +91,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "Animated tabs interaction component made with framer motion and tailwind css.",
-    componentTags: ["tabs", "button", "card"],
     type: "component",
   },
   {
@@ -111,7 +102,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A video player component made with framer motion and tailwind css.",
-    componentTags: ["media", "button"],
     type: "component",
   },
   {
@@ -123,7 +113,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "An audio player component made with framer motion and tailwind css.",
-    componentTags: ["media", "button"],
     type: "component",
   },
   {
@@ -135,7 +124,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A cycle status button component made with framer motion and tailwind css.",
-    componentTags: ["button", "badge"],
     type: "component",
   },
   {
@@ -147,7 +135,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A floating action menu component made with framer motion and tailwind css.",
-    componentTags: ["button", "badge"],
     type: "component",
   },
   {
@@ -159,7 +146,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A notification popover component made with framer motion and tailwind css.",
-    componentTags: ["popover", "button"],
     type: "component",
   },
   {
@@ -170,7 +156,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
       src: "/videos/components/badge.webm",
     },
     description: "A badge component made with framer motion and tailwind css.",
-    componentTags: ["badge", "button"],
     type: "component",
   },
   {
@@ -182,7 +167,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A kanban board component made with framer motion and tailwind css.",
-    componentTags: ["kanban", "card"],
     type: "component",
   },
   {
@@ -193,19 +177,16 @@ export const COMPONENT_ROUTES: EachRoute[] = [
       src: "/videos/components/switch.webm",
     },
     description: "A switch component made with framer motion and tailwind css.",
-    componentTags: ["switch", "button", "toggle"],
     type: "component",
   },
   {
     title: "Alert",
     href: "/alert",
-    badge: "New",
     media: {
       type: "video",
       src: "/videos/components/alert.webm",
     },
     description: "An alert component made with framer motion and tailwind css.",
-    componentTags: ["alert", "button"],
     type: "component",
   },
   {
@@ -217,7 +198,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "An avatar group component made with framer motion and tailwind css.",
-    componentTags: ["avatar"],
     type: "component",
   },
   {
@@ -229,7 +209,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     },
     description:
       "A calendar component made with framer motion and tailwind css.",
-    componentTags: ["calendar"],
     type: "component",
     badge: "New",
   },

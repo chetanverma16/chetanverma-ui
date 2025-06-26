@@ -22,7 +22,6 @@ export const NAVLINKS = [
     title: "Templates",
     href: `/all-templates`,
     icon: <LayoutTemplate className="w-4 h-4" />,
-    badge: "New",
   },
   {
     title: "Components",
@@ -107,7 +106,7 @@ export function NavMenu({ isDropdown = false }) {
         const Comp = (
           <Anchor
             key={item.title + item.href}
-            activeClassName="dark:font-medium font-semibold"
+            activeClassName="bg-gray-200/50"
             absolute
             className={cn(
               "flex items-center gap-1 dark:text-stone-300/85 text-stone-800 p-2 rounded-lg hover:bg-secondary hover:text-gray-900 cursor-pointer transition-all duration-200",
@@ -118,11 +117,6 @@ export function NavMenu({ isDropdown = false }) {
           >
             {item.icon}
             {item.title}
-            {item.badge && (
-              <span className="ml-2 px-1.5 py-0.5 text-xs rounded-md bg-primary/10 text-primary">
-                {item.badge}
-              </span>
-            )}
           </Anchor>
         );
         return isDropdown ? (

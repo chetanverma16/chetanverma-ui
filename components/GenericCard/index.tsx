@@ -9,9 +9,6 @@ const ComponentCard = ({
   description,
   media,
   href,
-  templateTags,
-  componentTags,
-  type,
   badge,
 }: EachRoute) => {
   const ref = useRef(null);
@@ -74,21 +71,6 @@ const ComponentCard = ({
             {badge && <Badge className="capitalize">{badge}</Badge>}
           </h3>
           <p className="text-sm text-gray-500">{description}</p>
-        </div>
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 p-3">
-          {type === "template" &&
-            templateTags?.map((tag) => (
-              <Badge className="capitalize" variant="outline" key={tag}>
-                {tag}
-              </Badge>
-            ))}
-          {type === "component" &&
-            componentTags?.map((tag) => (
-              <Badge className="capitalize" variant="outline" key={tag}>
-                {tag}
-              </Badge>
-            ))}
         </div>
       </motion.div>
     </Link>
