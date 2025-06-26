@@ -14,7 +14,7 @@ export default function DocsMenu({ isSheet = false }) {
       <div className="flex flex-col gap-2">
         <h4
           onClick={() => router.push("/components")}
-          className="text-base font-bold"
+          className="text-base font-bold cursor-pointer"
         >
           All Components
         </h4>
@@ -28,6 +28,7 @@ export default function DocsMenu({ isSheet = false }) {
           return <SubLink key={item.title + index} {...modifiedItems} />;
         })}
       </div>
+
       <div className="flex flex-col gap-2">
         <h4 className="text-base font-bold">Follow</h4>
         <a

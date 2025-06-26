@@ -29,7 +29,6 @@ import AudioPlayer from "@/components/main/AudioPlayer";
 import CycleStatusButton from "@/components/main/CycleStatusButton";
 import FloatingActionMenu from "@/components/main/FloatingActionMenu";
 import { NotificationPopover } from "@/components/main/NotificationPopover";
-import BadgeDemo from "@/components/main/Badge/Demo";
 import KanbanBoardView from "@/components/main/KanbanBoard/KanbanBoardView";
 import Switch from "@/components/main/Switch";
 import Alert from "@/components/main/Alert";
@@ -62,7 +61,6 @@ const components = {
   CycleStatusButton,
   FloatingActionMenu,
   NotificationPopover,
-  BadgeDemo,
   KanbanBoardView,
   Switch,
   Alert,

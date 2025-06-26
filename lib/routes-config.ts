@@ -149,16 +149,6 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     type: "component",
   },
   {
-    title: "Badge",
-    href: "/badge",
-    media: {
-      type: "video",
-      src: "/videos/components/badge.webm",
-    },
-    description: "A badge component made with framer motion and tailwind css.",
-    type: "component",
-  },
-  {
     title: "Kanban Board",
     href: "/kanban-board",
     media: {
