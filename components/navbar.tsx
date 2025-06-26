@@ -13,36 +13,51 @@ import {
   LayoutTemplate,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
-export const NAVLINKS = [
-  {
-    title: "Templates",
-    href: `/all-templates`,
-    icon: <LayoutTemplate className="w-4 h-4" />,
-  },
-  {
-    title: "Components",
-    href: `/components/${COMPONENT_ROUTES[0].href}`,
-    icon: <Package className="w-4 h-4" />,
-  },
-  {
-    title: "Github",
-    href: "https://github.com/chetanverma16/chetanverma-ui",
-    icon: <Github className="w-4 h-4" />,
-  },
-  {
-    title: "Chetan Verma",
-    href: "https://chetanverma.com",
-    icon: <LinkIcon className="w-4 h-4" />,
-    type: "primary",
-  },
-];
-
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [githubStars, setGithubStars] = useState<number | null>(null);
+
+  const getGithubStars = async () => {
+    const response = await fetch(
+      "https://api.github.com/repos/chetanverma16/chetanverma-ui"
+    );
+    const data = await response.json();
+    setGithubStars(data.stargazers_count);
+  };
+
+  useEffect(() => {
+    getGithubStars();
+  }, []);
+
+  const navLinks = useMemo(() => {
+    return [
+      {
+        title: "Templates",
+        href: `/all-templates`,
+        icon: <LayoutTemplate className="w-4 h-4" />,
+      },
+      {
+        title: "Components",
+        href: `/components/${COMPONENT_ROUTES[0].href}`,
+        icon: <Package className="w-4 h-4" />,
+      },
+      {
+        title: `Github ${githubStars ? `(${githubStars})` : ""}`,
+        href: "https://github.com/chetanverma16/chetanverma-ui",
+        icon: <Github className="w-4 h-4" />,
+      },
+      {
+        title: "Chetan Verma",
+        href: "https://chetanverma.com",
+        icon: <LinkIcon className="w-4 h-4" />,
+        type: "primary",
+      },
+    ];
+  }, [githubStars]);
 
   return (
     <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 bg-background z-[100000]">
@@ -51,7 +66,7 @@ export function Navbar() {
           <Logo />
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4 text-sm font-medium text-muted-foreground">
-            <NavMenu />
+            <NavMenu isDropdown={false} navLinks={navLinks} />
           </div>
           {/* Mobile Navigation */}
           <AnimatePresence>
@@ -79,7 +94,7 @@ export function Navbar() {
                   exit={{ opacity: 0, y: 10 }}
                   className="absolute right-0 top-full mt-2 w-48 rounded-md border bg-background shadow-lg"
                 >
-                  <NavMenu isDropdown />
+                  <NavMenu isDropdown navLinks={navLinks} />
                 </motion.div>
               )}
             </motion.div>
@@ -99,10 +114,21 @@ export function Logo() {
   );
 }
 
-export function NavMenu({ isDropdown = false }) {
+export function NavMenu({
+  isDropdown = false,
+  navLinks,
+}: {
+  isDropdown: boolean;
+  navLinks: {
+    title: string;
+    href: string;
+    icon: React.ReactNode;
+    type?: string;
+  }[];
+}) {
   return (
     <>
-      {NAVLINKS.map((item) => {
+      {navLinks?.map((item) => {
         const Comp = (
           <Anchor
             key={item.title + item.href}
