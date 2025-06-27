@@ -34,6 +34,8 @@ import Switch from "@/components/main/Switch";
 import Alert from "@/components/main/Alert";
 import AvatarGroup from "@/components/main/AvatarGroup";
 import Calendar from "@/components/main/Calendar";
+import TextRevealEffect from "@/components/main/TextRevealEffect";
+import TextRevealEffectDemo from "@/components/main/TextRevealEffect/Demo";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -66,6 +68,8 @@ const components = {
   Alert,
   AvatarGroup,
   Calendar,
+  TextRevealEffect,
+  TextRevealEffectDemo,
 
   // Icons
   User,

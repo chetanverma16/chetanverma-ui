@@ -200,6 +200,17 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     description:
       "A calendar component made with framer motion and tailwind css.",
     type: "component",
+  },
+  {
+    title: "Text Reveal Effect",
+    href: "/text-reveal-effect",
+    media: {
+      type: "video",
+      src: "/videos/components/text-reveal-effect.webm",
+    },
+    description:
+      "A text reveal effect component made with gsap and tailwind css.",
+    type: "component",
     badge: "New",
   },
 ];

@@ -53,3 +53,24 @@ export function stringToDate(date: string) {
   const [day, month, year] = date.split("-").map(Number);
   return new Date(year, month - 1, day);
 }
+
+export function divideTextByCharacter(text: string) {
+  return text.split("").map((char, index) => ({
+    char,
+    key: index,
+  }));
+}
+
+export function splitTextByWord(text: string) {
+  return text.split(" ").map((word, index) => ({
+    word,
+    key: index,
+  }));
+}
+
+export function splitTextByCharacter(text: string) {
+  return text.split("").map((char, index) => ({
+    char,
+    key: index,
+  }));
+}
