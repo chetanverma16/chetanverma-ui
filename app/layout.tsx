@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
-import { Navbar } from "@/components/navbar";
+
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
-import { Footer } from "@/components/footer";
 import Script from "next/script";
 import { Provider } from "jotai";
+import Wrapper from "@/components/Wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
@@ -47,11 +47,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="w-full max-w-6xl mx-auto h-auto scroll-smooth mb-10">
-              <Navbar />
-              {children}
-              <Footer />
-            </main>
+            <Wrapper>{children}</Wrapper>
           </ThemeProvider>
         </body>
       </Provider>
