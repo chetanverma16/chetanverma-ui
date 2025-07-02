@@ -11,15 +11,17 @@ import {
   Link as LinkIcon,
   X,
   LayoutTemplate,
+  LayoutGrid,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [githubStars, setGithubStars] = useState<number | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
   const getGithubStars = async () => {
     const response = await fetch(
@@ -33,8 +35,32 @@ export function Navbar() {
     getGithubStars();
   }, []);
 
+  // Hide mobile menu when clicking outside
+  useEffect(() => {
+    if (!isOpen) return;
+
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen]);
+
   const navLinks = useMemo(() => {
     return [
+      {
+        title: "Blocks",
+        href: `/blocks`,
+        icon: <LayoutGrid className="w-4 h-4" />,
+      },
       {
         title: "Templates",
         href: `/all-templates`,
@@ -75,6 +101,7 @@ export function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="md:hidden z-[100000] relative"
+              ref={mobileMenuRef}
             >
               <Button
                 variant="ghost"

@@ -41,7 +41,7 @@ const ComponentCard = ({
             : { opacity: 0, y: 20, filter: "blur(10px)" }
         }
         transition={{ duration: 0.4, delay: 0.3 }}
-        className="bg-white rounded-xl h-full overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow"
+        className="bg-white rounded-xl w-full h-full overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition-shadow"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >

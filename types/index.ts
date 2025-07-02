@@ -3,7 +3,7 @@
 export type EachRoute = {
   title: string;
   href: string;
-  type: "template" | "component";
+  type: "template" | "component" | "block";
   media: {
     type: "image" | "video";
     src: string;

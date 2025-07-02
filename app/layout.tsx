@@ -8,6 +8,7 @@ import { Provider } from "jotai";
 import Wrapper from "@/components/Wrapper";
 
 const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Design Components - Webmakers UI",
   metadataBase: new URL("https://ui.webmakers.studio/"),

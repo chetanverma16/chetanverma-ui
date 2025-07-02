@@ -3,7 +3,11 @@
 import GenericCard from "@/components/GenericCard";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { COMPONENT_ROUTES, TEMPLATE_ROUTES } from "@/lib/routes-config";
+import {
+  BLOCK_ROUTES,
+  COMPONENT_ROUTES,
+  TEMPLATE_ROUTES,
+} from "@/lib/routes-config";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -72,6 +76,7 @@ export default function Home() {
         <Tabs defaultValue="components" className="w-full">
           <TabsList>
             <TabsTrigger value="components">Components</TabsTrigger>
+            <TabsTrigger value="blocks">Blocks</TabsTrigger>
             <TabsTrigger value="templates">Templates</TabsTrigger>
           </TabsList>
           <TabsContent value="components">
@@ -92,6 +97,13 @@ export default function Home() {
           <TabsContent value="templates">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 my-10">
               {TEMPLATE_ROUTES.map((route) => (
+                <GenericCard key={route.href} {...route} />
+              ))}
+            </div>
+          </TabsContent>
+          <TabsContent value="blocks">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-10">
+              {BLOCK_ROUTES.map((route) => (
                 <GenericCard key={route.href} {...route} />
               ))}
             </div>

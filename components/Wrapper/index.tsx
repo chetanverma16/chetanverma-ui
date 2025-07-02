@@ -12,7 +12,7 @@ const Wrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <div
       className={cn(
-        "w-full max-w-6xl mx-auto h-auto scroll-smooth mb-10",
+        "w-full max-w-7xl mx-auto h-auto scroll-smooth mb-10",
         pathname.includes("demo") && "w-full max-w-full"
       )}
     >

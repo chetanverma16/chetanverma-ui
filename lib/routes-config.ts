@@ -214,3 +214,13 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     badge: "New",
   },
 ];
+
+export const BLOCK_ROUTES: EachRoute[] = [
+  {
+    title: "Header One",
+    href: "/blocks",
+    media: { type: "video", src: "/videos/blocks/header-one.webm" },
+    type: "block",
+    badge: "New",
+  },
+];
