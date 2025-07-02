@@ -3,7 +3,7 @@ import BlockViewer from "@/components/BlockViewer";
 export const HeaderOneViewer = () => (
   <BlockViewer
     title="Hero Section One"
-    iframeSrc="http://localhost:3000/blocks/demo/header/one"
+    iframeSrc={`${process.env.NEXT_PUBLIC_APP_URL}/blocks/demo/header/one`}
     previewClassName="w-full h-[calc(100vh-2rem)]"
     codeBlocks={[
       {
