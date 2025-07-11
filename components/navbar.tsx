@@ -11,7 +11,6 @@ import {
   Link as LinkIcon,
   X,
   LayoutTemplate,
-  LayoutGrid,
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -56,11 +55,6 @@ export function Navbar() {
 
   const navLinks = useMemo(() => {
     return [
-      {
-        title: "Blocks",
-        href: `/blocks`,
-        icon: <LayoutGrid className="w-4 h-4" />,
-      },
       {
         title: "Templates",
         href: `/all-templates`,
