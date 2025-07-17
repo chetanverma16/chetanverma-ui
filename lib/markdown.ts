@@ -150,6 +150,10 @@ function sluggify(text: string) {
 }
 
 function getDocsContentPath(slug: string) {
+  // Handle empty slug for components index page
+  if (!slug || slug === '') {
+    return path.join(process.cwd(), "/contents/components/", `index.mdx`);
+  }
   return path.join(process.cwd(), "/contents/components/", `${slug}/index.mdx`);
 }
 

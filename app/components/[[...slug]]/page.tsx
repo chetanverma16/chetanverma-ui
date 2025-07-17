@@ -51,7 +51,11 @@ export async function generateMetadata(props: PageProps) {
 }
 
 export function generateStaticParams() {
-  return COMPONENT_ROUTES.map((item) => ({
-    slug: item.href.split("/").slice(1),
-  }));
+  return [
+    // Add empty slug for components index page
+    { slug: [] },
+    ...COMPONENT_ROUTES.map((item) => ({
+      slug: item.href.split("/").slice(1),
+    }))
+  ];
 }
