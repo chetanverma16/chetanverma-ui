@@ -4,14 +4,7 @@ import Link from "next/link";
 import Anchor from "./anchor";
 import Image from "next/image";
 import { COMPONENT_ROUTES } from "@/lib/routes-config";
-import {
-  Menu,
-  Package,
-  Github,
-  Link as LinkIcon,
-  X,
-  LayoutTemplate,
-} from "lucide-react";
+import { Menu, Package, Github, Link as LinkIcon, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -56,11 +49,6 @@ export function Navbar() {
   const navLinks = useMemo(() => {
     return [
       {
-        title: "Templates",
-        href: `/all-templates`,
-        icon: <LayoutTemplate className="w-4 h-4" />,
-      },
-      {
         title: "Components",
         href: `/components/${COMPONENT_ROUTES[0].href}`,
         icon: <Package className="w-4 h-4" />,
@@ -69,6 +57,11 @@ export function Navbar() {
         title: `Github ${githubStars ? `(${githubStars})` : ""}`,
         href: "https://github.com/chetanverma16/chetanverma-ui",
         icon: <Github className="w-4 h-4" />,
+      },
+      {
+        title: "Let's Build Your MVP",
+        href: "https://www.webmakers.studio/",
+        icon: <LinkIcon className="w-4 h-4" />,
       },
       {
         title: "Chetan Verma",
