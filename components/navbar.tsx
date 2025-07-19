@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Anchor from "./anchor";
 import Image from "next/image";
 import { COMPONENT_ROUTES } from "@/lib/routes-config";
-import { Menu, Package, Github, Link as LinkIcon, X } from "lucide-react";
+import { Menu, Package, Link as LinkIcon, X, Layout } from "lucide-react";
 import { Button } from "./ui/button";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -54,20 +53,27 @@ export function Navbar() {
         icon: <Package className="w-4 h-4" />,
       },
       {
-        title: `Github ${githubStars ? `(${githubStars})` : ""}`,
-        href: "https://github.com/chetanverma16/chetanverma-ui",
-        icon: <Github className="w-4 h-4" />,
+        title: `Layouts`,
+        href: "https://layouts.chetanverma.com",
+        icon: <Layout className="w-4 h-4" />,
       },
+
       {
-        title: "Let's Build Your MVP",
-        href: "https://www.webmakers.studio/",
+        title: "chetanverma.com",
+        href: "https://www.chetanverma.com/",
         icon: <LinkIcon className="w-4 h-4" />,
       },
       {
-        title: "Chetan Verma",
-        href: "https://chetanverma.com",
-        icon: <LinkIcon className="w-4 h-4" />,
-        type: "primary",
+        title: "Work With me",
+        href: "https://calendly.com/webmakers-studio/30min",
+        icon: (
+          <img
+            src="/profile.png"
+            className="size-5 rounded-full"
+            alt="Chetan Verma"
+          />
+        ),
+        type: "outline",
       },
     ];
   }, [githubStars]);
@@ -144,20 +150,27 @@ export function NavMenu({
     <>
       {navLinks?.map((item) => {
         const Comp = (
-          <Anchor
+          <Button
             key={item.title + item.href}
-            activeClassName="bg-gray-200/50"
-            absolute
+            asChild
+            variant={
+              item.type === "primary"
+                ? "default"
+                : item.type === "outline"
+                ? "outline"
+                : "ghost"
+            }
             className={cn(
               "flex items-center gap-1 dark:text-stone-300/85 text-stone-800 p-2 rounded-lg hover:bg-secondary hover:text-gray-900 cursor-pointer transition-all duration-200",
               item.type === "primary" &&
                 "bg-primary hover:bg-primary/90 hover:text-white text-primary-foreground"
             )}
-            href={item.href}
           >
-            {item.icon}
-            {item.title}
-          </Anchor>
+            <Link href={item.href}>
+              {item.icon}
+              {item.title}
+            </Link>
+          </Button>
         );
         return isDropdown ? (
           <div key={item.title + item.href} className="px-2 py-1">
