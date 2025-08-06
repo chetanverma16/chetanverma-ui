@@ -5,4 +5,5 @@ export type EachRoute = {
   href: string;
   description?: string;
   badge?: string;
+  component?: React.ComponentType;
 };

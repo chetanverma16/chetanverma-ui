@@ -13,7 +13,7 @@ export default function DocsMenu({ isSheet = false }) {
     <div className="flex flex-col gap-3.5 mt-5 pr-2 pb-6">
       <div className="flex flex-col gap-2">
         <h4
-          onClick={() => router.push("/components")}
+          onClick={() => router.push("/")}
           className="text-base font-bold cursor-pointer"
         >
           All Components

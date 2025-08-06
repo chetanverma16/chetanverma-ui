@@ -79,8 +79,8 @@ export function Navbar() {
   }, [githubStars]);
 
   return (
-    <nav className="w-full border p-3 px-4 text-sm rounded-2xl shadow-lg my-6 sticky top-0 bg-background z-[100000]">
-      <div className="w-full mx-auto h-full flex items-center justify-between md:gap-2">
+    <nav className="w-full border-b border-gray-100 text-sm bg-background sticky top-0 z-[10000]">
+      <div className="w-full mx-auto max-w-5xl p-3 border-gray-100 px-4 lg:border-x h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center justify-between w-full gap-6">
           <Logo />
           {/* Desktop Navigation */}

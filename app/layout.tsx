@@ -5,7 +5,8 @@ import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import Script from "next/script";
 import { Provider } from "jotai";
-import Wrapper from "@/components/Wrapper";
+import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,7 +49,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <Wrapper>{children}</Wrapper>
+            <Navbar />
+            <div
+              className={cn(
+                "w-full max-w-5xl lg:border-x px-4 mx-auto border-gray-100 h-auto scroll-smooth"
+              )}
+            >
+              {children}
+            </div>
           </ThemeProvider>
         </body>
       </Provider>

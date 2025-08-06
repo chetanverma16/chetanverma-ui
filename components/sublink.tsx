@@ -21,8 +21,8 @@ export default function SubLink({
   return (
     <div
       className={cn(
-        "flex flex-col gap-1 w-full text-gray-500 text-sm",
-        isActive && "text-primary"
+        "flex flex-col gap-1 p-1 w-full text-gray-500 rounded-sm text-sm transition-all duration-100 ease-out",
+        isActive && "text-primary bg-gray-100"
       )}
     >
       <Anchor

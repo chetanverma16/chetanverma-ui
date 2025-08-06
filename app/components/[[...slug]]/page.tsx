@@ -56,6 +56,6 @@ export function generateStaticParams() {
     { slug: [] },
     ...COMPONENT_ROUTES.map((item) => ({
       slug: item.href.split("/").slice(1),
-    }))
+    })),
   ];
 }

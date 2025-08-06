@@ -19,7 +19,6 @@ import PropsTable from "@/components/PropsTable";
 
 // Stacking Navbar
 import StackingNavbar from "@/components/main/StackingNavbar";
-import StackedImageCardEffect from "@/components/main/StackedImageCardEffect";
 import DropdownMenuRenderer from "@/components/main/DropdownMenu/renderer";
 import InputWithTags from "@/components/main/InputWithTags";
 import { StackedCardsInteraction } from "@/components/main/StackedCardsInteraction";
@@ -29,13 +28,9 @@ import AudioPlayer from "@/components/main/AudioPlayer";
 import CycleStatusButton from "@/components/main/CycleStatusButton";
 import FloatingActionMenu from "@/components/main/FloatingActionMenu";
 import { NotificationPopover } from "@/components/main/NotificationPopover";
-import KanbanBoardView from "@/components/main/KanbanBoard/KanbanBoardView";
 import Switch from "@/components/main/Switch";
 import Alert from "@/components/main/Alert";
 import AvatarGroup from "@/components/main/AvatarGroup";
-import Calendar from "@/components/main/Calendar";
-import TextRevealEffect from "@/components/main/TextRevealEffect";
-import TextRevealEffectDemo from "@/components/main/TextRevealEffect/Demo";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -52,7 +47,6 @@ const components = {
 
   // Custom Components
   StackingNavbar,
-  StackedImageCardEffect,
   DropdownMenuRenderer,
   InputWithTags,
   StackedCardsInteraction,
@@ -63,13 +57,9 @@ const components = {
   CycleStatusButton,
   FloatingActionMenu,
   NotificationPopover,
-  KanbanBoardView,
   Switch,
   Alert,
   AvatarGroup,
-  Calendar,
-  TextRevealEffect,
-  TextRevealEffectDemo,
 
   // Icons
   User,
@@ -151,7 +141,7 @@ function sluggify(text: string) {
 
 function getDocsContentPath(slug: string) {
   // Handle empty slug for components index page
-  if (!slug || slug === '') {
+  if (!slug || slug === "") {
     return path.join(process.cwd(), "/contents/components/", `index.mdx`);
   }
   return path.join(process.cwd(), "/contents/components/", `${slug}/index.mdx`);
