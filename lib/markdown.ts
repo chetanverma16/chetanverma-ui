@@ -31,6 +31,7 @@ import { NotificationPopover } from "@/components/main/NotificationPopover";
 import Switch from "@/components/main/Switch";
 import Alert from "@/components/main/Alert";
 import AvatarGroup from "@/components/main/AvatarGroup";
+import WordLoader from "@/components/main/WordLoader";
 
 // Icons
 import { User, Settings, LogOut } from "lucide-react";
@@ -60,7 +61,7 @@ const components = {
   Switch,
   Alert,
   AvatarGroup,
-
+  WordLoader,
   // Icons
   User,
   Settings,

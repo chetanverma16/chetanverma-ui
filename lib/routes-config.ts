@@ -11,6 +11,7 @@ import StackedCardRenderer from "@/components/main/StackedCardsInteraction/rende
 import StackingNavbar from "@/components/main/StackingNavbar";
 import Switch from "@/components/main/Switch";
 import VideoPlayerDemo from "@/components/main/VideoPlayer/demo";
+import WordLoader from "@/components/main/WordLoader";
 
 // Type
 import { EachRoute } from "@/types";
@@ -103,5 +104,12 @@ export const COMPONENT_ROUTES: EachRoute[] = [
     description:
       "An avatar group component made with framer motion and tailwind css.",
     component: AvatarGroupDemo,
+  },
+  {
+    title: "Word Loader",
+    href: "/word-loader",
+    description:
+      "An animated loader that cycles through a set of words, showing each with a blur-fade-in effect, then fades out before showing the next.",
+    component: WordLoader,
   },
 ];
