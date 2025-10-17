@@ -25,10 +25,7 @@ export default function SubLink({
         isActive && "text-primary bg-gray-100"
       )}
     >
-      <Anchor
-        activeClassName="text-primary dark:font-medium font-semibold"
-        href={href}
-      >
+      <Anchor activeClassName="text-primary font-semibold" href={href}>
         {title} {badge && <Badge variant="outline">{badge}</Badge>}
       </Anchor>
     </div>

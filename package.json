@@ -1,5 +1,5 @@
 {
-  "name": "webmakers-ui",
+  "name": "chetanverma-ui",
   "version": "2.0.0",
   "private": true,
   "scripts": {
@@ -36,7 +36,6 @@
     "motion": "^11.17.0",
     "next": "15.0.4",
     "next-mdx-remote": "^5.0.0",
-    "next-themes": "^0.3.0",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-colorful": "^5.6.1",

@@ -65,7 +65,7 @@ export function Navbar() {
       },
       {
         title: "Work With me",
-        href: "https://calendly.com/webmakers-studio/30min",
+        href: "http://cal.com/chetanverma",
         icon: (
           <img
             src="/profile.png"
@@ -128,7 +128,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-x-1">
-      <Image src="/logo.svg" alt="Webmakers UI" width={20} height={20} />
+      <Image src="/logo.svg" alt="ChetanVerma UI" width={20} height={20} />
       <h2 className="text-sm flex items-center gap-x-2">chetanverma/ui</h2>
     </Link>
   );
@@ -161,7 +161,7 @@ export function NavMenu({
                 : "ghost"
             }
             className={cn(
-              "flex items-center gap-1 dark:text-stone-300/85 text-stone-800 p-2 rounded-lg hover:bg-secondary hover:text-gray-900 cursor-pointer transition-all duration-200",
+              "flex items-center gap-1 text-stone-800 p-2 rounded-lg hover:bg-secondary hover:text-gray-900 cursor-pointer transition-all duration-200",
               item.type === "primary" &&
                 "bg-primary hover:bg-primary/90 hover:text-white text-primary-foreground"
             )}

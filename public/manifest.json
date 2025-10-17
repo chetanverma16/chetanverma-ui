@@ -1,0 +1,20 @@
+{
+  "name": "ChetanVerma UI - React Components Library",
+  "short_name": "ChetanVerma UI",
+  "description": "A collection of beautiful, animated, and responsive design components built with React, Tailwind CSS, and Framer Motion.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["development", "productivity", "utilities"],
+  "lang": "en-US"
+}

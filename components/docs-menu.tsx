@@ -40,10 +40,10 @@ export default function DocsMenu({ isSheet = false }) {
         </a>
         <a
           className="text-sm no-underline text-muted-foreground hover:text-foreground"
-          href="https://www.webmakers.studio"
+          href="https://www.chetanverma.com"
           target="_blank"
         >
-          webmakers.studio
+          chetanverma.com
         </a>
       </div>
     </div>
