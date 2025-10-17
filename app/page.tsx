@@ -52,7 +52,7 @@ export default function Home() {
           meticulously crafted with modern animations and clean design
           principles.
         </p>
-        <div className="flex items-center gap-x-2 my-4">
+        <div className="flex flex-col md:flex-row items-center gap-x-2 my-4">
           <Button onClick={browseAllComponents}>Browse All Components</Button>
           <Button
             onClick={followForUpdates}
