@@ -2,12 +2,32 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { COMPONENT_ROUTES } from "@/lib/routes-config";
-import { Menu, Package, Link as LinkIcon, X, Layout } from "lucide-react";
+import { Menu, Link as LinkIcon, X, Layout, ChevronLeft } from "lucide-react";
 import { Button } from "./ui/button";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, Suspense } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
+
+function BackButton() {
+  const searchParams = useSearchParams();
+  const ref = searchParams.get("ref");
+
+  if (ref !== "chetanverma.com") return null;
+
+  return (
+    <Button
+      variant="ghost"
+      size="icon"
+      asChild
+      className="mr-1 h-7 w-7 shrink-0"
+    >
+      <Link href="https://chetanverma.com">
+        <ChevronLeft className="w-4 h-4" />
+      </Link>
+    </Button>
+  );
+}
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,16 +68,10 @@ export function Navbar() {
   const navLinks = useMemo(() => {
     return [
       {
-        title: "Components",
-        href: `/components/${COMPONENT_ROUTES[0].href}`,
-        icon: <Package className="w-4 h-4" />,
-      },
-      {
         title: `Layouts`,
         href: "https://layouts.chetanverma.com",
         icon: <Layout className="w-4 h-4" />,
       },
-
       {
         title: "chetanverma.com",
         href: "https://www.chetanverma.com/",
@@ -82,7 +96,12 @@ export function Navbar() {
     <nav className="w-full border-b border-gray-100 text-sm bg-background sticky top-0 z-[10000]">
       <div className="w-full mx-auto max-w-5xl p-3 border-gray-100 px-4 lg:border-x h-full flex items-center justify-between md:gap-2">
         <div className="flex items-center justify-between w-full gap-6">
-          <Logo />
+          <div className="flex items-center gap-1">
+            <Suspense>
+              <BackButton />
+            </Suspense>
+            <Logo />
+          </div>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-4 text-sm font-medium text-muted-foreground">
             <NavMenu isDropdown={false} navLinks={navLinks} />
